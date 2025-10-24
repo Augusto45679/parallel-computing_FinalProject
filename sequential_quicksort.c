@@ -1,7 +1,7 @@
+#include <mpi.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-#include <time.h>   // Para medir el tiempo de ejecución
 
 // Función de comparación para qsort
 int compare_integers(const void *a, const void *b) {
@@ -18,6 +18,8 @@ bool is_prime(int n) {
 }
 
 int main(int argc, char **argv) {
+    MPI_Init(&argc, &argv);
+
     int i; // Declaración movida al principio del bloque
 
     if (argc != 2) {
@@ -51,8 +53,9 @@ int main(int argc, char **argv) {
 
     printf("Arreglo original (N=%d) leído desde %s.\n", N, argv[1]);
 
-    // Iniciar el temporizador
-    clock_t start_time = clock();
+    // Iniciar el temporizador con MPI para consistencia
+    double start_time, end_time;
+    start_time = MPI_Wtime();
 
     // Realizar el ordenamiento Quick Sort secuencial
     qsort(array, N, sizeof(int), compare_integers);
@@ -65,16 +68,17 @@ int main(int argc, char **argv) {
         }
     }
 
-    // Detener el temporizador AHORA, después de todo el trabajo
-    clock_t end_time = clock();
-    double cpu_time_used = ((double) (end_time - start_time)) / CLOCKS_PER_SEC;
+    // Detener el temporizador después de todo el trabajo
+    end_time = MPI_Wtime();
+    double time_used = end_time - start_time;
 
     printf("\n--- Resultados Secuenciales ---\n");
     printf("Arreglo ordenado correctamente.\n"); // No imprimimos el arreglo completo por defecto para grandes N
     printf("Total de números primos encontrados: %d\n", prime_count);
-    printf("Tiempo de ejecución total (ordenamiento y conteo): %f segundos\n", cpu_time_used);
+    printf("Tiempo de ejecución total: %f segundos\n", time_used);
 
     free(array);
+    MPI_Finalize();
 
     return 0;
 }
