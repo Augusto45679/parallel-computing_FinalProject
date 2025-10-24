@@ -24,13 +24,13 @@ int main(int argc, char **argv) {
 
     if (argc != 2) {
         fprintf(stderr, "Uso: %s <archivo_de_entrada>\n", argv[0]);
-        return 1;
+        MPI_Abort(MPI_COMM_WORLD, 1);
     }
 
     FILE *file = fopen(argv[1], "r");
     if (!file) {
         perror("Error abriendo el archivo");
-        return 1;
+        MPI_Abort(MPI_COMM_WORLD, 1);
     }
 
     int N;
@@ -42,7 +42,7 @@ int main(int argc, char **argv) {
     if (!array) {
         perror("Error de asignación de memoria");
         fclose(file);
-        return 1;
+        MPI_Abort(MPI_COMM_WORLD, 1);
     }
 
     // Leer los datos desde el archivo
