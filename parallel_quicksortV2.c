@@ -181,7 +181,7 @@ void parallel_quicksort(int **local_array_ptr, int *local_n_ptr, MPI_Comm comm) 
     int *incoming_buffer = NULL;
     int incoming_count = 0;
 
-    if (color == 0) { // Grupo bajo: envía 'greater', recibe 'less'
+    if (color == 0) { // Grupo bajo: envía 'greater', recibe 'less' | bajo quiere deshacerse de sus números > pivot y recibir los números ≤ pivot del grupo alto.
         partner_rank = comm_rank + (comm_size / 2);
         // Primero, averigua cuántos datos vas a recibir
         MPI_Sendrecv(&greater_count, 1, MPI_INT, partner_rank, 0, 
@@ -198,7 +198,18 @@ void parallel_quicksort(int **local_array_ptr, int *local_n_ptr, MPI_Comm comm) 
         memcpy(*local_array_ptr + less_count, incoming_buffer, incoming_count * sizeof(int));
         *local_n_ptr = less_count + incoming_count;
 
-    } else { // Grupo alto: envía 'less', recibe 'greater'
+            // sugerencia de usar malloc() en vez de realloc 
+            // Usamos la misma lógica que el grupo 'alto' para consistencia y seguridad.
+
+        // int *new_local_array = (int *)malloc((less_count + incoming_count) * sizeof(int));
+        // memcpy(new_local_array, local_array, less_count * sizeof(int)); // Copia los 'less' propios
+        // memcpy(new_local_array + less_count, incoming_buffer, incoming_count * sizeof(int)); // Copia los 'less' recibidos
+        
+        // free(*local_array_ptr);
+        // *local_array_ptr = new_local_array;
+        // *local_n_ptr = less_count + incoming_count;
+
+    } else { // Grupo alto: envía 'less', recibe 'greater' | alto quiere deshacerse de sus números ≤ pivot y recibir los números > pivot del grupo bajo
         partner_rank = comm_rank - (comm_size / 2);
         MPI_Sendrecv(&less_count, 1, MPI_INT, partner_rank, 0, 
                      &incoming_count, 1, MPI_INT, partner_rank, 0, comm, MPI_STATUS_IGNORE);
