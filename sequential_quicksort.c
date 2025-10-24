@@ -9,14 +9,17 @@ int compare_integers(const void *a, const void *b) {
 }
 // Función para verificar si un número es primo (idéntica a la de parallel_quicksortV2.c)
 bool is_prime(int n) {
+    int i; // Declaración movida al principio del bloque
     if (n <= 1) return false;
-    for (int i = 2; i * i <= n; i++) {
+    for (i = 2; i * i <= n; i++) {
         if (n % i == 0) return false;
     }
     return true;
 }
 
 int main(int argc, char **argv) {
+    int i; // Declaración movida al principio del bloque
+
     if (argc != 2) {
         fprintf(stderr, "Uso: %s <archivo_de_entrada>\n", argv[0]);
         return 1;
@@ -41,7 +44,7 @@ int main(int argc, char **argv) {
     }
 
     // Leer los datos desde el archivo
-    for (int i = 0; i < N; i++) {
+    for (i = 0; i < N; i++) {
         fscanf(file, "%d", &array[i]);
     }
     fclose(file);
@@ -56,7 +59,7 @@ int main(int argc, char **argv) {
 
     // Contar números primos
     int prime_count = 0;
-    for (int i = 0; i < N; i++) {
+    for (i = 0; i < N; i++) {
         if (is_prime(array[i])) {
             prime_count++;
         }

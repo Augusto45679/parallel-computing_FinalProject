@@ -1,0 +1,60 @@
+#!/bin/bash
+
+# ======================= CONFIGURACIÓN =======================
+# Directorio del proyecto. USA UNA RUTA ABSOLUTA, es crucial para que cron funcione.
+# Tu home es /home/cp200807, como indica el prompt "~$".
+PROJECT_DIR="/home/cp200807"
+
+# Nombres de los ejecutables con sus rutas correctas
+# CORRECCIÓN: Se añadió el subdirectorio 'august' a la ruta.
+SEQ_EXEC="${PROJECT_DIR}/august/sequential_quicksort"
+PAR_EXEC="${PROJECT_DIR}/parallel_quicksortV2"
+
+# Archivo de datos de entrada
+INPUT_FILE="${PROJECT_DIR}/numeros32768.txt"
+
+# Archivo donde se guardarán los resultados
+LOG_FILE="${PROJECT_DIR}/resultados_tests.txt"
+
+# Lista de número de procesos para probar la versión paralela
+PROCESSOR_COUNTS="2 4 8 16"
+# =============================================================
+
+
+# --- INICIO DEL SCRIPT ---
+
+# Añadir una marca de tiempo al archivo de log para saber cuándo se ejecutó la prueba
+echo "============================================================" >> "$LOG_FILE"
+echo "INICIO DE PRUEBAS: $(date)" >> "$LOG_FILE"
+echo "============================================================" >> "$LOG_FILE"
+
+# 1. Ejecutar la prueba secuencial
+echo "" >> "$LOG_FILE"
+echo "--- Prueba Secuencial ---" >> "$LOG_FILE"
+if [ -f "$SEQ_EXEC" ]; then
+    # Ejecuta el comando y redirige tanto la salida estándar como los errores al archivo de log
+    "$SEQ_EXEC" "$INPUT_FILE" >> "$LOG_FILE" 2>&1
+else
+    echo "Error: El ejecutable '$SEQ_EXEC' no fue encontrado." >> "$LOG_FILE"
+fi
+
+# 2. Ejecutar las pruebas paralelas
+echo "" >> "$LOG_FILE"
+echo "--- Pruebas Paralelas ---" >> "$LOG_FILE"
+if [ -f "$PAR_EXEC" ]; then
+    for NP in $PROCESSOR_COUNTS; do
+        echo "" >> "$LOG_FILE"
+        echo "--- Ejecutando con $NP procesos ---" >> "$LOG_FILE"
+        # Ejecuta el comando mpirun y redirige su salida al log
+        mpirun -np "$NP" "$PAR_EXEC" "$INPUT_FILE" >> "$LOG_FILE" 2>&1
+    done
+else
+    echo "Error: El ejecutable '$PAR_EXEC' no fue encontrado." >> "$LOG_FILE"
+fi
+
+echo "" >> "$LOG_FILE"
+echo "FIN DE PRUEBAS: $(date)" >> "$LOG_FILE"
+echo "" >> "$LOG_FILE"
+
+# Mensaje para cuando se ejecuta manualmente
+echo "Pruebas completadas. Resultados guardados en $LOG_FILE"
