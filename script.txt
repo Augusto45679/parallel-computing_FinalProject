@@ -46,7 +46,8 @@ if [ -f "$PAR_EXEC" ]; then
         echo "" >> "$LOG_FILE"
         echo "--- Ejecutando con $NP procesos ---" >> "$LOG_FILE"
         # Ejecuta el comando mpirun y redirige su salida al log
-        mpirun -np "$NP" "$PAR_EXEC" "$INPUT_FILE" >> "$LOG_FILE" 2>&1
+    # Versión ACTUAL (correcta)
+    "$MPIRUN_EXEC" -np "$NP" "$PAR_EXEC" "$INPUT_FILE" >> "$LOG_FILE" 2>&1
     done
 else
     echo "Error: El ejecutable '$PAR_EXEC' no fue encontrado." >> "$LOG_FILE"
