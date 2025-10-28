@@ -1,9 +1,8 @@
 # Proyecto Final - Computación Paralela: Quicksort Paralelo con MPI
 
-Este proyecto consiste en la implementación y análisis de rendimiento de un algoritmo de ordenamiento Quicksort paralelo utilizando la interfaz de paso de mensajes (MPI). Se compara la versión paralela con una implementación secuencial para evaluar el _speedup_ y la eficiencia obtenidos al distribuir la carga de trabajo en múltiples procesos.
+Este proyecto presenta la implementación y el análisis de rendimiento de un algoritmo de ordenamiento **Quicksort paralelo** utilizando la Interfaz de Paso de Mensajes (MPI). Se compara una versión paralela optimizada con una implementación secuencial estándar para evaluar el _speedup_ y la eficiencia que se obtienen al distribuir la carga de trabajo en múltiples procesos.
 
 Adicionalmente, después del ordenamiento, se realiza una tarea de cómputo (conteo de números primos) para simular una carga de trabajo más completa sobre los datos ya distribuidos y ordenados.
-
 
 ## Características Principales
 
