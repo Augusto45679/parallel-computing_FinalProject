@@ -81,6 +81,21 @@ int main(int argc, char **argv) {
     int total_prime_count = 0;
     MPI_Reduce(&local_prime_count, &total_prime_count, 1, MPI_INT, MPI_SUM, 0, MPI_COMM_WORLD);
     
+    // // ================== CÁLCULO DE BALANCEO DE CARGA ==================
+    // // Medimos cómo se distribuyeron los elementos al final del ordenamiento.
+    // int min_local_n, max_local_n;
+    // long long sum_local_n; // Usamos long long para evitar overflow si N es muy grande
+
+    // // El proceso raíz recibirá el mínimo, máximo y la suma de todos los local_n
+    // MPI_Reduce(&local_n, &min_local_n, 1, MPI_INT, MPI_MIN, 0, MPI_COMM_WORLD);
+    // MPI_Reduce(&local_n, &max_local_n, 1, MPI_INT, MPI_MAX, 0, MPI_COMM_WORLD);
+    
+    // // Para la suma, es importante convertir local_n a un tipo más grande antes de la reducción
+    // long long local_n_ll = local_n;
+    // MPI_Reduce(&local_n_ll, &sum_local_n, 1, MPI_LONG_LONG, MPI_SUM, 0, MPI_COMM_WORLD);
+    // // =================================================================
+
+
     int *recv_counts = NULL;
     int *displacements = NULL;
     if (world_rank == 0) {
@@ -114,6 +129,14 @@ int main(int argc, char **argv) {
         #endif
         printf("Total de números primos encontrados: %d\n", total_prime_count);
         printf("Tiempo de ejecución total: %f segundos\n", end_time - start_time);
+
+        // // Imprimir estadísticas de balanceo de carga
+        // double avg_local_n = (double)sum_local_n / world_size;
+        // printf("\n--- Balanceo de Carga ---\n");
+        // printf("Elementos por proceso: Min=%d, Max=%d, Promedio=%.2f\n", min_local_n, max_local_n, avg_local_n);
+        // if (avg_local_n > 0) {
+        //     printf("Ratio de desbalance (Max/Promedio): %.2f\n", max_local_n / avg_local_n);
+        // }
         
         free(global_array);
         free(recv_counts);
