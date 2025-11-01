@@ -6,6 +6,10 @@
 #include <stdbool.h>
 #include <math.h>
 
+// compile ' gcc generate_large_range.c -o generate_large_range -O3 -lm '
+// algunas ejecucion
+// ' ./generate_large_range 1000000 numeros_1M_NEW.txt '  && './generate_large_range 1000000 numeros_1M_rango.txt -50000000 50000000'
+
 // --- Prototipos de Funciones ---
 static void generate_with_hash_table(int N, long long min_val, long long max_val, FILE* file);
 static void generate_with_shuffle(int N, long long min_val, long long max_val, FILE* file);
