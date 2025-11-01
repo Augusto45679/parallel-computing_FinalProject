@@ -144,7 +144,7 @@ int main(int argc, char *argv[]) {
 
         if (!hash_search(used_numbers, num)) {
             hash_insert(used_numbers, num);
-            if (fprintf(file, "%d\n", num) < 0) {
+            if (fprintf(file, "%d ", num) < 0) { // Cambiado \n por un espacio
                 perror("Error escribiendo en el archivo");
                 break; // Salir del bucle en caso de error
             }
@@ -152,6 +152,7 @@ int main(int argc, char *argv[]) {
         }
     }
 
+    fprintf(file, "\n"); // Añadimos un salto de línea final por buena práctica
     free_hash_table(used_numbers);
     fclose(file);
 
