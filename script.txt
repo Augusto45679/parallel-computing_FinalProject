@@ -1,61 +1,91 @@
 #!/bin/bash
-
 # ======================= CONFIGURACIÓN =======================
-# Directorio del proyecto. USA UNA RUTA ABSOLUTA, es crucial para que cron funcione.
-# Tu home es /home/cp200807, como indica el prompt "~$".
+# Directorio del proyecto. La ruta debe ser absoluta.
 PROJECT_DIR="/home/cp200807"
 
-# Nombres de los ejecutables con sus rutas correctas
-# CORRECCIÓN: Se añadió el subdirectorio 'august' a la ruta.
+# Nombres de los ejecutables
 SEQ_EXEC="${PROJECT_DIR}/august/sequential_quicksort"
 PAR_EXEC="${PROJECT_DIR}/parallel_quicksortV2"
 
-# Archivo de datos de entrada
-INPUT_FILE="${PROJECT_DIR}/numeros32768.txt"
+# Ruta absoluta a mpirun para asegurar que el cron encuentre
+MPIRUN_EXEC="/opt/mpich2/bin/mpirun"
+
+# Archivos de datos de entrada
+INPUT_FILE_10M="${PROJECT_DIR}/numeros_10M_MaxInt.txt"
+INPUT_FILE_5M="${PROJECT_DIR}/numeros_5M_maxint.txt"
 
 # Archivo donde se guardarán los resultados
 LOG_FILE="${PROJECT_DIR}/resultados_tests.txt"
 
 # Lista de número de procesos para probar la versión paralela
-PROCESSOR_COUNTS="2 4 8 16"
+PROCESSOR_COUNTS="2 4 6 8"
+
 # =============================================================
-
-
 # --- INICIO DEL SCRIPT ---
 
-# Añadir una marca de tiempo al archivo de log para saber cuándo se ejecutó la prueba
+# Añadir una marca de tiempo al archivo de log
 echo "============================================================" >> "$LOG_FILE"
 echo "INICIO DE PRUEBAS: $(date)" >> "$LOG_FILE"
 echo "============================================================" >> "$LOG_FILE"
 
-# 1. Ejecutar la prueba secuencial
+# ==================== PRUEBAS CON ARCHIVO 10M ====================
 echo "" >> "$LOG_FILE"
-echo "--- Prueba Secuencial ---" >> "$LOG_FILE"
+echo "###########################################################" >> "$LOG_FILE"
+echo "# PRUEBAS CON ARCHIVO: numeros_10M_MaxInt.txt" >> "$LOG_FILE"
+echo "###########################################################" >> "$LOG_FILE"
+
+# 1. Ejecutar la prueba secuencial con archivo 10M
+echo "" >> "$LOG_FILE"
+echo "--- Prueba Secuencial (10M) ---" >> "$LOG_FILE"
 if [ -f "$SEQ_EXEC" ]; then
-    # Ejecuta el comando y redirige tanto la salida estándar como los errores al archivo de log
-    "$SEQ_EXEC" "$INPUT_FILE" >> "$LOG_FILE" 2>&1
+    "$SEQ_EXEC" "$INPUT_FILE_10M" >> "$LOG_FILE" 2>&1
 else
     echo "Error: El ejecutable '$SEQ_EXEC' no fue encontrado." >> "$LOG_FILE"
 fi
 
-# 2. Ejecutar las pruebas paralelas
+# 2. Ejecutar las pruebas paralelas con archivo 10M
 echo "" >> "$LOG_FILE"
-echo "--- Pruebas Paralelas ---" >> "$LOG_FILE"
+echo "--- Pruebas Paralelas (10M) ---" >> "$LOG_FILE"
 if [ -f "$PAR_EXEC" ]; then
     for NP in $PROCESSOR_COUNTS; do
         echo "" >> "$LOG_FILE"
-        echo "--- Ejecutando con $NP procesos ---" >> "$LOG_FILE"
-        # Ejecuta el comando mpirun y redirige su salida al log
-    # Versión ACTUAL (correcta)
-    "$MPIRUN_EXEC" -np "$NP" "$PAR_EXEC" "$INPUT_FILE" >> "$LOG_FILE" 2>&1
+        echo "Ejecutando con $NP procesos..." >> "$LOG_FILE"
+        "$MPIRUN_EXEC" -np $NP "$PAR_EXEC" "$INPUT_FILE_10M" >> "$LOG_FILE" 2>&1
     done
 else
     echo "Error: El ejecutable '$PAR_EXEC' no fue encontrado." >> "$LOG_FILE"
 fi
 
+# ==================== PRUEBAS CON ARCHIVO 5M ====================
 echo "" >> "$LOG_FILE"
-echo "FIN DE PRUEBAS: $(date)" >> "$LOG_FILE"
-echo "" >> "$LOG_FILE"
+echo "###########################################################" >> "$LOG_FILE"
+echo "# PRUEBAS CON ARCHIVO: numeros_5M_maxint.txt" >> "$LOG_FILE"
+echo "###########################################################" >> "$LOG_FILE"
 
-# Mensaje para cuando se ejecuta manualmente
-echo "Pruebas completadas. Resultados guardados en $LOG_FILE"
+# 3. Ejecutar la prueba secuencial con archivo 50M
+echo "" >> "$LOG_FILE"
+echo "--- Prueba Secuencial (5M) ---" >> "$LOG_FILE"
+if [ -f "$SEQ_EXEC" ]; then
+    "$SEQ_EXEC" "$INPUT_FILE_5M" >> "$LOG_FILE" 2>&1
+else
+    echo "Error: El ejecutable '$SEQ_EXEC' no fue encontrado." >> "$LOG_FILE"
+fi
+
+# 4. Ejecutar las pruebas paralelas con archivo 5M
+echo "" >> "$LOG_FILE"
+echo "--- Pruebas Paralelas (5M) ---" >> "$LOG_FILE"
+if [ -f "$PAR_EXEC" ]; then
+    for NP in $PROCESSOR_COUNTS; do
+        echo "" >> "$LOG_FILE"
+        echo "Ejecutando con $NP procesos..." >> "$LOG_FILE"
+        "$MPIRUN_EXEC" -np $NP "$PAR_EXEC" "$INPUT_FILE_5M" >> "$LOG_FILE" 2>&1
+    done
+else
+    echo "Error: El ejecutable '$PAR_EXEC' no fue encontrado." >> "$LOG_FILE"
+fi
+
+# Finalización
+echo "" >> "$LOG_FILE"
+echo "============================================================" >> "$LOG_FILE"
+echo "FIN DE PRUEBAS: $(date)" >> "$LOG_FILE"
+echo "============================================================" >> "$LOG_FILE"
