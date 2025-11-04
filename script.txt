@@ -60,7 +60,7 @@ run_tests_for_file() {
 # --- INICIO DEL SCRIPT ---
 
 # Limpia el log anterior y añade una marca de tiempo de inicio
-echo "============================================================" > "$LOG_FILE"
+echo "============================================================" >> "$LOG_FILE"
 echo "INICIO DE PRUEBAS: $(date)" >> "$LOG_FILE"
 echo "============================================================" >> "$LOG_FILE"
 
@@ -78,4 +78,3 @@ done
 echo "" >> "$LOG_FILE"
 echo "FIN DE PRUEBAS: $(date)" >> "$LOG_FILE"
 echo "============================================================" >> "$LOG_FILE"
-
