@@ -127,3 +127,5 @@ A continuación se presenta una tabla con los resultados de la última ejecució
 1.  **Correctitud:** En todas las ejecuciones, el número de primos contados fue el mismo, lo que verifica que la implementación paralela es correcta.
 2.  **Speedup:** Se observa un buen speedup al aumentar el número de procesos, especialmente en el caso del archivo con 10 millones de números. Esto demuestra que el algoritmo escala bien para grandes volúmenes de datos.
 3.  **Eficiencia:** La eficiencia (`Speedup/P`) disminuye a medida que se añaden más procesos. Esto es esperable debido al overhead de comunicación y a la ley de Amdahl. Sin embargo, los resultados son satisfactorios y demuestran el beneficio de la paralelización.
+
+![alt text](10M_SpeedUpGrafico.png)
