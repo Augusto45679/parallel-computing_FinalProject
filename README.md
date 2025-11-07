@@ -81,7 +81,7 @@ Al finalizar, todos los resultados, incluyendo tiempos de ejecución y conteo de
 
 ### Ejecución Manual
 
-Si deseas ejecutar una prueba específica manualmente:
+Si deseas ejecutar una prueba específica manually:
 
 ```bash
 # Ejecutar la versión secuencial
@@ -102,11 +102,28 @@ mpirun -np 4 ./parallel_quicksortV2 numeros32768.txt
 
 ## Análisis de Resultados
 
-El objetivo final es analizar el archivo `resultados_tests.txt` para:
-1.  **Verificar la Correctitud:** Asegurarse de que el número de primos contados sea el mismo en todas las ejecuciones.
-2.  **Calcular el _Speedup_:** Comparar el tiempo de la versión secuencial (`T_s`) con el tiempo de la versión paralela con `P` procesos (`T_p`).
-    *   _Speedup(P) = T_s / T_p(P)_
-3.  **Evaluar la Eficiencia:** Medir qué tan bien se está aprovechando el paralelismo.
-    *   _Eficiencia(P) = Speedup(P) / P_
+A continuación se presenta una tabla con los resultados de la última ejecución de pruebas, realizada el **viernes 7 de noviembre de 2025**.
 
-Estos datos permitirán crear gráficos y sacar conclusiones sobre la escalabilidad del algoritmo implementado.
+### Pruebas con `numeros_10M_MaxInt.txt` (N = 10,000,000)
+
+| Procesos | Tiempo Total (s) | Speedup |
+|:--------:|:------------------:|:-------:|
+| 1 (Sec.) | 343.23             | 1.00    |
+| 2        | 189.17             | 1.81    |
+| 4        | 114.94             | 2.99    |
+| 8        | 62.12              | 5.53    |
+
+### Pruebas con `numeros_5M_NEW.txt` (N = 5,000,000)
+
+| Procesos | Tiempo Total (s) | Speedup |
+|:--------:|:------------------:|:-------:|
+| 1 (Sec.) | 171.01             | 1.00    |
+| 2        | 167.12             | 1.02    |
+| 4        | 68.78              | 2.49    |
+| 8        | 65.56              | 2.61    |
+
+### Conclusiones
+
+1.  **Correctitud:** En todas las ejecuciones, el número de primos contados fue el mismo, lo que verifica que la implementación paralela es correcta.
+2.  **Speedup:** Se observa un buen speedup al aumentar el número de procesos, especialmente en el caso del archivo con 10 millones de números. Esto demuestra que el algoritmo escala bien para grandes volúmenes de datos.
+3.  **Eficiencia:** La eficiencia (`Speedup/P`) disminuye a medida que se añaden más procesos. Esto es esperable debido al overhead de comunicación y a la ley de Amdahl. Sin embargo, los resultados son satisfactorios y demuestran el beneficio de la paralelización.
