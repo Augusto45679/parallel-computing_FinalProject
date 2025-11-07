@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-#include <string.h> // Para memcpy
+#include <string.h>
 
 // --- Estructura para almacenar métricas de tiempo ---
 typedef struct {
@@ -21,11 +21,14 @@ void parallel_quicksort(int **local_array, int *local_n, MPI_Comm comm, Timing *
 
 // --- Función Principal ---
 int main(int argc, char **argv) {
-    MPI_Init(&argc, &argv);
+    MPI_Init(&argc, &argv); //Inicializa el entorno MPI
 
-    int world_rank, world_size;
-    MPI_Comm_rank(MPI_COMM_WORLD, &world_rank);
-    MPI_Comm_size(MPI_COMM_WORLD, &world_size);
+    int world_rank, world_size; //Declaración de variables
+    MPI_Comm_rank(MPI_COMM_WORLD, &world_rank); /*Cada proceso consulta su ID dentro del comunicador COMM_WORLD
+    y la salida se escribe en la variable world_rank*/
+
+    MPI_Comm_size(MPI_COMM_WORLD, &world_size); /*Función a la que se pasa un comunicador, en este caso el comunicador global COMM_WORLD,
+     devuelve la cantidad de procesos en el mismo y lo coloca en world_size*/
     
     // Inicialización de variables de tiempo para el proceso local
     Timing local_timing = {0.0, 0.0, 0.0, 0.0};
@@ -34,10 +37,10 @@ int main(int argc, char **argv) {
     MPI_Barrier(MPI_COMM_WORLD); 
     start_time = MPI_Wtime();
 
-    int N = 0; 
-    int *global_array = NULL;
+    int N = 0;  //Tamaño de la lista
+    int *global_array = NULL; //Puntero para la lista 
 
-    if (world_rank == 0) {
+    if (world_rank == 0) { //Nodo master se encarga de validar y leer el archivo de entrada
         if (argc != 2) {
             fprintf(stderr, "Uso: %s <archivo_de_entrada>\n", argv[0]);
             MPI_Abort(MPI_COMM_WORLD, 1);
@@ -49,20 +52,20 @@ int main(int argc, char **argv) {
             MPI_Abort(MPI_COMM_WORLD, 1);
         }
 
-        // Leer N y los datos desde el archivo
-        fscanf(file, "%d", &N);
+        fscanf(file, "%d", &N); /*Lee la primera línea del archivo, lo almacena en la variable N
+         y valida que sea divisible por el world_size, si no lo es aborta el programa*/
         if (N % world_size != 0) {
             fprintf(stderr, "N (%d) debe ser divisible por el número de procesos (%d).\n", N, world_size);
             MPI_Abort(MPI_COMM_WORLD, 1);
         }
 
-        global_array = (int *)malloc(N * sizeof(int));
+        global_array = (int *)malloc(N * sizeof(int)); //Reserva el espacio en memoria para la lista
         for (int i = 0; i < N; i++) {
-            fscanf(file, "%d", &global_array[i]);
+            fscanf(file, "%d", &global_array[i]); //Almacena la lista completa leída del archivo
         }
         fclose(file);
 
-        #ifdef DEBUG_PRINT
+        #ifdef DEBUG_PRINT //Versión DEBUG para imprimir por pantalla la lista ordenada
         printf("Arreglo original (N=%d) leído desde %s:\n", N, argv[1]);
         for (int i = 0; i < N; i++) { printf("%d ", global_array[i]); }
         printf("\n\n");
@@ -73,69 +76,91 @@ int main(int argc, char **argv) {
     
     // --- Comunicación: Bcast de N ---
     temp_time = MPI_Wtime();
-    MPI_Bcast(&N, 1, MPI_INT, 0, MPI_COMM_WORLD);
+    MPI_Bcast(&N, 1, MPI_INT, 0, MPI_COMM_WORLD); /*Proces 0 hace Broadcast sobre el comunicador global, envía el valor
+    en su variable N y todos los demás procesos llaman la misma función para recibir el valor y almacenarlo en su propia
+    variable N*/
     local_timing.comm_time += (MPI_Wtime() - temp_time);
 
-    int local_n = N / world_size;
-    int *local_array = (int *)malloc(local_n * sizeof(int));
+    int local_n = N / world_size; //Tamaño de arreglo local para cada proceso, tamaño uniforme en primera iteración
+    int *local_array = (int *)malloc(local_n * sizeof(int)); /*Declara el puntero del arreglo local de cada proceso
+    y reserva de memoria para la lista de elementos */
 
     // --- Comunicación: Scatter inicial ---
     temp_time = MPI_Wtime();
-    MPI_Scatter(global_array, local_n, MPI_INT, local_array, local_n, MPI_INT, 0, MPI_COMM_WORLD);
+    MPI_Scatter(global_array, local_n, MPI_INT, local_array, local_n, MPI_INT, 0, MPI_COMM_WORLD); /*El proceso 0
+    toma el global_array y lo divide en partes iguales,
+    cada proceso en el comunicador debe almacenar esta partición en local_array
+    */
     local_timing.comm_time += (MPI_Wtime() - temp_time);
     
-    if (world_rank == 0) {
+    if (world_rank == 0) { //Una vez dividida la lista entre los demás procesos, el nodo master libera la memoria de la lista inicial
         free(global_array);
         global_array = NULL;
     }
 
-    // --- Algoritmo principal ---
     parallel_quicksort(&local_array, &local_n, MPI_COMM_WORLD, &local_timing);
+    /*Cada proceso en paralelo llama a la función de ordenamiento pasando cómo parámetro su lista local y su n local
+    La función se llama recursivamente y cuando retorna se encarga de todo el ordenamiento recursivo, el intercambio de datos 
+    y la modificación de local_array y local_n.
+    Cuando retorna cada proceso tiene en su local_array una porción final de la lista, ya ordenada*/
 
-    // --- Cómputo: Conteo de primos ---
-    int local_prime_count = 0;
+    int local_prime_count = 0; //Variable que almacena en cada proceso la cantidad de números primos en la lista local
     temp_time = MPI_Wtime();
-    for (int i = 0; i < local_n; i++) { 
+
+    /*Recorre la lista local ordenada, por cada elemento llama a is_prime,
+    si es verdadero aumenta en 1 el contador*/
+    for (int i = 0; i < local_n; i++) {
         if (is_prime(local_array[i])) local_prime_count++; 
     }
     local_timing.comp_time += (MPI_Wtime() - temp_time);
     
-    int total_prime_count = 0;
-    // --- Comunicación: Reduce de primos ---
+    int total_prime_count = 0; //Declaración de variable que contabiliza el total de números primos de toda la lista global
     temp_time = MPI_Wtime();
     MPI_Reduce(&local_prime_count, &total_prime_count, 1, MPI_INT, MPI_SUM, 0, MPI_COMM_WORLD);
+    /*El nodo master va a cada proceso en el comunicador global y toma el valor de su variable local_prime_count,
+    aplica la operación suma a todos los valores y los almacena en su variable total_prime_count*/
     local_timing.comm_time += (MPI_Wtime() - temp_time);
     
-    int *recv_counts = NULL;
-    int *displacements = NULL;
-    if (world_rank == 0) {
+    int *recv_counts = NULL; //Cantidad de elementos que va a recibir de cada proceso
+    int *displacements = NULL; //Indice que indica en qué posición comenzar a almacenar los elementos de cada proceso
+
+    if (world_rank == 0) { //Nodo Master reserva memoria para estas variables
         recv_counts = (int *)malloc(world_size * sizeof(int));
         displacements = (int *)malloc(world_size * sizeof(int));
     }
 
-    // --- Comunicación: Gather de tamaños finales ---
     temp_time = MPI_Wtime();
+
     MPI_Gather(&local_n, 1, MPI_INT, recv_counts, 1, MPI_INT, 0, MPI_COMM_WORLD);
+    /*Proceso 0 recolecta los valores en la variable local_n de cada proceso y almacena en el arreglo recv_counts
+    la cantidad de elementos que va a recibir de cada proceso*/
+
     local_timing.comm_time += (MPI_Wtime() - temp_time);
     
-    if (world_rank == 0) {
-        // --- Cómputo: Cálculo de displacements ---
+    if (world_rank == 0) {//Nodo Master
         temp_time = MPI_Wtime();
-        int final_N = 0;
+        int final_N = 0; 
         for (int i = 0; i < world_size; i++) final_N += recv_counts[i];
+        //Vueleve a obtener el tamaño de N total sumando las cantidades n obtenidas de cada proceso
         
-        global_array = (int *)malloc(final_N * sizeof(int)); // Usar el tamaño final real
+        global_array = (int *)malloc(final_N * sizeof(int)); // Recerva memoria para almacenar la lista final ordenada
         
-        displacements[0] = 0;
-        for (int i = 1; i < world_size; i++) {
-            displacements[i] = displacements[i - 1] + recv_counts[i - 1];
+        //Calcula los indices de los displacement para el comienzo de lista de cada proceso
+        displacements[0] = 0; //Elementos de proceso 0 empiezan en posición 0
+        for (int i = 1; i < world_size; i++) { //Iteración por cada proceso a partir del proceso 1, el 0 se asignó fuera del bucle
+            displacements[i] = displacements[i - 1] + recv_counts[i - 1]; /*La posición de inicio del proceso es igual a
+            la posición de inicio del proceso anterior + la cantidad de elementos del proceso anterior*/
         }
         local_timing.comp_time += (MPI_Wtime() - temp_time);
     }
     
-    // --- Comunicación: Gatherv final ---
     temp_time = MPI_Wtime();
     MPI_Gatherv(local_array, local_n, MPI_INT, global_array, recv_counts, displacements, MPI_INT, 0, MPI_COMM_WORLD);
+    /*Gaterv es para recibir de los procesos listas de tamaño variable, el proceso 0 recolecta la lista ordenada
+    contenida en la variable local_array de cada proceso, conoce la cantidad de elementos a recibir de cada proceso
+    con el array recv_counts y la posición de inicio de cada lista recolectada con el arreglo displacements. 
+    Con esa información, concatena las listas ordenadas recibidas por los procesos en la variable global_array */
+
     local_timing.comm_time += (MPI_Wtime() - temp_time);
     
     // --- Barrera final para medir el tiempo total de todos los procesos ---
@@ -199,8 +224,6 @@ int main(int argc, char **argv) {
     return 0;
 }
 
-
-// --- Implementación de Quick Sort Paralelo Mejorado ---
 void parallel_quicksort(int **local_array_ptr, int *local_n_ptr, MPI_Comm comm, Timing *timing_data) {
     int comm_rank, comm_size;
     MPI_Comm_rank(comm, &comm_rank);
@@ -211,18 +234,16 @@ void parallel_quicksort(int **local_array_ptr, int *local_n_ptr, MPI_Comm comm, 
     double temp_time;
 
     if (comm_size < 2) {
-        // --- Cómputo: qsort local final ---
         temp_time = MPI_Wtime();
         if (local_n > 0) qsort(local_array, local_n, sizeof(int), compare_integers);
         timing_data->comp_time += (MPI_Wtime() - temp_time);
         return;
     }
 
-    // ================== MEJORA 1: PIVOTE POR MEDIANA DE MEDIANOS ==================
+    // ================== PIVOTE POR MEDIANA DE MEDIANOS ==================
     int pivot = 0;
     // 1. Cada proceso calcula su mediana local
     int local_median = 0;
-    // --- Cómputo: qsort y cálculo de mediana local ---
     temp_time = MPI_Wtime();
     if (local_n > 0) {
         qsort(local_array, local_n, sizeof(int), compare_integers);
@@ -255,9 +276,8 @@ void parallel_quicksort(int **local_array_ptr, int *local_n_ptr, MPI_Comm comm, 
     temp_time = MPI_Wtime();
     MPI_Bcast(&pivot, 1, MPI_INT, 0, comm);
     timing_data->comm_time += (MPI_Wtime() - temp_time);
-    // =============================================================================
 
-    // ================== MEJORA 2: PARTICIÓN IN-PLACE ==================
+    // ===========PARTICIÓN IN-PLACE ===========
     // --- Cómputo: Partición in-place ---
     temp_time = MPI_Wtime();
     int split_point = partition_inplace(local_array, local_n, pivot);
@@ -265,9 +285,8 @@ void parallel_quicksort(int **local_array_ptr, int *local_n_ptr, MPI_Comm comm, 
     
     int less_count = split_point;
     int greater_count = local_n - split_point;
-    // =================================================================
 
-    // ================== MEJORA 3: INTERCAMBIO CON MPI_Sendrecv ==================
+    // ============INTERCAMBIO CON MPI_Sendrecv =========
     int partner_rank;
     int color = (comm_rank < comm_size / 2) ? 0 : 1;
     
@@ -295,7 +314,7 @@ void parallel_quicksort(int **local_array_ptr, int *local_n_ptr, MPI_Comm comm, 
         // --- Cómputo: Reasignación y copia de datos (Grupo Bajo) ---
         temp_time = MPI_Wtime();
         
-        // Usamos realloc y memcpy, como en el código original, para el grupo 0
+        // Usamos realloc y memcpy¿, para el grupo 0
         *local_array_ptr = (int *)realloc(local_array, (less_count + incoming_count) * sizeof(int));
         if (*local_array_ptr == NULL) { /* Manejo de error de realloc */ MPI_Abort(comm, 99); }
         memcpy(*local_array_ptr + less_count, incoming_buffer, incoming_count * sizeof(int));
@@ -333,7 +352,6 @@ void parallel_quicksort(int **local_array_ptr, int *local_n_ptr, MPI_Comm comm, 
         timing_data->comp_time += (MPI_Wtime() - temp_time); // Fin de la medición de cómputo (malloc/memcpy/free)
     }
     free(incoming_buffer);
-    // =============================================================================
     
     // --- Comunicación: Split de comunicador ---
     temp_time = MPI_Wtime();
@@ -350,7 +368,6 @@ void parallel_quicksort(int **local_array_ptr, int *local_n_ptr, MPI_Comm comm, 
     timing_data->comm_time += (MPI_Wtime() - temp_time);
 }
 
-// --- Funciones Auxiliares ---
 
 // Particiona un arreglo in-place y devuelve el número de elementos <= pivote
 int partition_inplace(int *array, int n, int pivot) {
