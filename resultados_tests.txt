@@ -1,0 +1,2010 @@
+============================================================
+INICIO DE PRUEBAS: Tue Nov  4 05:00:01 UTC 2025
+============================================================
+
+###########################################################
+# PRUEBAS CON ARCHIVO: numeros_10M_MaxInt.txt
+###########################################################
+
+--- Prueba Secuencial (numeros_10M_MaxInt.txt) ---
+Arreglo original (N=10000000) leído desde /home/cp200807/numeros_10M_MaxInt.txt.
+
+--- Resultados Secuenciales ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 244934
+Tiempo de ejecución total: 341.805470 segundos
+
+--- Pruebas Paralelas (numeros_10M_MaxInt.txt) ---
+
+Ejecutando con 2 procesos...
+Arreglo original (N=10000000) leído desde /home/cp200807/numeros_10M_MaxInt.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 244934
+Tiempo de ejecución total (Proceso 0): 189.110630 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 189.110630   | 85.219332    | 96.317991    | 7.573308     |
+| 1        | 189.093665   | 178.884548   | 10.208669    | 0.000448     |
+
+Ejecutando con 4 procesos...
+Arreglo original (N=10000000) leído desde /home/cp200807/numeros_10M_MaxInt.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 244934
+Tiempo de ejecución total (Proceso 0): 114.551331 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 114.551331   | 4.464320     | 102.501002   | 7.586010     |
+| 1        | 114.541374   | 42.071707    | 72.468815    | 0.000851     |
+| 2        | 114.544312   | 82.154722    | 32.389048    | 0.000543     |
+| 3        | 114.542649   | 104.808636   | 9.733596     | 0.000417     |
+
+Ejecutando con 8 procesos...
+Arreglo original (N=10000000) leído desde /home/cp200807/numeros_10M_MaxInt.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 244934
+Tiempo de ejecución total (Proceso 0): 61.937050 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 61.937050    | 2.755759     | 51.636915    | 7.544376     |
+| 1        | 61.932517    | 1.634637     | 60.297058    | 0.000822     |
+| 2        | 61.933582    | 3.334157     | 58.598777    | 0.000648     |
+| 3        | 61.931936    | 47.370874    | 14.560309    | 0.000753     |
+| 4        | 61.931324    | 37.097157    | 24.833653    | 0.000514     |
+| 5        | 61.934987    | 42.776555    | 19.158064    | 0.000368     |
+| 6        | 61.937258    | 47.845523    | 14.091282    | 0.000453     |
+| 7        | 61.931606    | 51.724867    | 10.206317    | 0.000422     |
+
+###########################################################
+# PRUEBAS CON ARCHIVO: numeros_5M_maxint.txt
+###########################################################
+
+--- Prueba Secuencial (numeros_5M_maxint.txt) ---
+Arreglo original (N=5000000) leído desde /home/cp200807/numeros_5M_maxint.txt.
+
+--- Resultados Secuenciales ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 122434
+Tiempo de ejecución total: 170.689562 segundos
+
+--- Pruebas Paralelas (numeros_5M_maxint.txt) ---
+
+Ejecutando con 2 procesos...
+Arreglo original (N=5000000) leído desde /home/cp200807/numeros_5M_maxint.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 122434
+Tiempo de ejecución total (Proceso 0): 118.859163 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 118.859163   | 1.767988     | 113.316808   | 3.774367     |
+| 1        | 118.848451   | 113.602816   | 5.245054     | 0.000581     |
+
+Ejecutando con 4 procesos...
+Arreglo original (N=5000000) leído desde /home/cp200807/numeros_5M_maxint.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 122434
+Tiempo de ejecución total (Proceso 0): 146.312517 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 146.312517   | 141.832309   | 0.677563     | 3.802645     |
+| 1        | 146.300657   | 10.909669    | 135.390598   | 0.000390     |
+| 2        | 146.303548   | 9.829870     | 136.473601   | 0.000078     |
+| 3        | 146.302276   | 10.081242    | 136.220962   | 0.000072     |
+
+Ejecutando con 8 procesos...
+Arreglo original (N=5000000) leído desde /home/cp200807/numeros_5M_maxint.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 122434
+Tiempo de ejecución total (Proceso 0): 59.588410 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 59.588410    | 0.577938     | 55.241636    | 3.768836     |
+| 1        | 59.583461    | 0.338719     | 59.244577    | 0.000165     |
+| 2        | 59.585271    | 0.337586     | 59.247556    | 0.000129     |
+| 3        | 59.584460    | 0.334953     | 59.249393    | 0.000113     |
+| 4        | 59.582937    | 1.149994     | 58.432302    | 0.000640     |
+| 5        | 59.585768    | 54.241876    | 5.343314     | 0.000578     |
+| 6        | 59.588753    | 28.253947    | 31.334469    | 0.000337     |
+| 7        | 59.584187    | 31.536111    | 28.047741    | 0.000335     |
+
+FIN DE PRUEBAS: Tue Nov  4 05:20:38 UTC 2025
+============================================================
+============================================================
+INICIO DE PRUEBAS: mar nov  4 11:24:25 UTC 2025
+============================================================
+
+###########################################################
+# PRUEBAS CON ARCHIVO: numeros_10M_MaxInt.txt
+###########################################################
+
+--- Prueba Secuencial (numeros_10M_MaxInt.txt) ---
+Arreglo original (N=10000000) leído desde /home/cp200807/numeros_10M_MaxInt.txt.
+
+--- Resultados Secuenciales ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 244934
+Tiempo de ejecución total: 948.520511 segundos
+
+--- Pruebas Paralelas (numeros_10M_MaxInt.txt) ---
+
+Ejecutando con 2 procesos...
+Arreglo original (N=10000000) leído desde /home/cp200807/numeros_10M_MaxInt.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 244934
+Tiempo de ejecución total (Proceso 0): 211.684863 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 211.684863   | 176.628692   | 13.678149    | 21.378023    |
+| 1        | 211.665819   | 178.879591   | 32.785800    | 0.000427     |
+
+Ejecutando con 4 procesos...
+Arreglo original (N=10000000) leído desde /home/cp200807/numeros_10M_MaxInt.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 244934
+Tiempo de ejecución total (Proceso 0): 114.526233 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 114.526233   | 4.515442     | 102.475174   | 7.535617     |
+| 1        | 114.517022   | 42.077895    | 72.438388    | 0.000739     |
+| 2        | 114.519202   | 82.155560    | 32.363047    | 0.000594     |
+| 3        | 114.518294   | 104.810206   | 9.707460     | 0.000628     |
+
+Ejecutando con 8 procesos...
+Arreglo original (N=10000000) leído desde /home/cp200807/numeros_10M_MaxInt.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 244934
+Tiempo de ejecución total (Proceso 0): 71.863470 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 71.863470    | 2.773702     | 61.538359    | 7.551409     |
+| 1        | 71.854414    | 1.632636     | 70.221110    | 0.000668     |
+| 2        | 71.859084    | 3.339075     | 68.519109    | 0.000900     |
+| 3        | 71.857725    | 47.369256    | 24.487686    | 0.000784     |
+| 4        | 71.856846    | 37.096436    | 34.759929    | 0.000481     |
+| 5        | 71.857219    | 61.850694    | 10.005987    | 0.000538     |
+| 6        | 71.863252    | 47.844503    | 24.018369    | 0.000380     |
+| 7        | 71.857334    | 51.725633    | 20.131284    | 0.000416     |
+
+###########################################################
+# PRUEBAS CON ARCHIVO: numeros_5M_maxint.txt
+###########################################################
+
+--- Prueba Secuencial (numeros_5M_maxint.txt) ---
+Arreglo original (N=5000000) leído desde /home/cp200807/numeros_5M_maxint.txt.
+
+--- Resultados Secuenciales ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 122434
+Tiempo de ejecución total: 170.716261 segundos
+
+--- Pruebas Paralelas (numeros_5M_maxint.txt) ---
+
+Ejecutando con 2 procesos...
+Arreglo original (N=5000000) leído desde /home/cp200807/numeros_5M_maxint.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 122434
+Tiempo de ejecución total (Proceso 0): 118.877587 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 118.877587   | 1.784059     | 113.317046   | 3.776482     |
+| 1        | 118.866894   | 113.604767   | 5.261520     | 0.000607     |
+
+Ejecutando con 4 procesos...
+Arreglo original (N=5000000) leído desde /home/cp200807/numeros_5M_maxint.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 122434
+Tiempo de ejecución total (Proceso 0): 146.846535 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 146.846535   | 142.374058   | 0.680712     | 3.791765     |
+| 1        | 146.834279   | 10.910435    | 135.923424   | 0.000419     |
+| 2        | 146.837532   | 9.829856     | 137.007600   | 0.000076     |
+| 3        | 146.835936   | 10.081403    | 136.754456   | 0.000077     |
+
+Ejecutando con 8 procesos...
+Arreglo original (N=5000000) leído desde /home/cp200807/numeros_5M_maxint.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 122434
+Tiempo de ejecución total (Proceso 0): 59.605075 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 59.605075    | 0.576195     | 55.257222    | 3.771658     |
+| 1        | 59.596650    | 0.338056     | 59.258417    | 0.000178     |
+| 2        | 59.601451    | 0.337299     | 59.264038    | 0.000113     |
+| 3        | 59.600355    | 0.334522     | 59.265712    | 0.000122     |
+| 4        | 59.599546    | 1.150667     | 58.448237    | 0.000642     |
+| 5        | 59.598959    | 54.242796    | 5.355568     | 0.000595     |
+| 6        | 59.604910    | 28.253059    | 31.351476    | 0.000375     |
+| 7        | 59.600004    | 31.536773    | 28.062862    | 0.000369     |
+
+FIN DE PRUEBAS: mar nov  4 11:56:21 UTC 2025
+============================================================
+============================================================
+INICIO DE PRUEBAS: mar nov  4 12:02:34 UTC 2025
+============================================================
+
+###########################################################
+# PRUEBAS CON ARCHIVO: numeros_10M_MaxInt.txt
+###########################################################
+
+--- Prueba Secuencial (numeros_10M_MaxInt.txt) ---
+Arreglo original (N=10000000) leído desde /home/cp200807/numeros_10M_MaxInt.txt.
+
+--- Resultados Secuenciales ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 244934
+Tiempo de ejecución total: 2090.063964 segundos
+
+--- Pruebas Paralelas (numeros_10M_MaxInt.txt) ---
+
+Ejecutando con 2 procesos...
+Arreglo original (N=10000000) leído desde /home/cp200807/numeros_10M_MaxInt.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 244934
+Tiempo de ejecución total (Proceso 0): 189.098852 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 189.098852   | 85.245701    | 96.330847    | 7.522304     |
+| 1        | 189.081825   | 178.884385   | 10.196981    | 0.000459     |
+
+Ejecutando con 4 procesos...
+Arreglo original (N=10000000) leído desde /home/cp200807/numeros_10M_MaxInt.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 244934
+Tiempo de ejecución total (Proceso 0): 114.506459 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 114.506459   | 4.466358     | 102.503177   | 7.536923     |
+| 1        | 114.496494   | 42.079893    | 72.415587    | 0.001014     |
+| 2        | 114.499533   | 82.155504    | 32.343304    | 0.000725     |
+| 3        | 114.497760   | 104.815044   | 9.682250     | 0.000466     |
+
+Ejecutando con 8 procesos...
+Arreglo original (N=10000000) leído desde /home/cp200807/numeros_10M_MaxInt.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 244934
+Tiempo de ejecución total (Proceso 0): 61.893565 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 61.893565    | 2.783024     | 51.622679    | 7.487862     |
+| 1        | 61.887433    | 1.628318     | 60.258365    | 0.000749     |
+| 2        | 61.891177    | 3.336874     | 58.553317    | 0.000986     |
+| 3        | 61.890168    | 47.369868    | 14.519625    | 0.000675     |
+| 4        | 61.887851    | 37.096413    | 24.791023    | 0.000415     |
+| 5        | 61.889847    | 42.777033    | 19.112218    | 0.000596     |
+| 6        | 61.894823    | 47.842965    | 14.051487    | 0.000371     |
+| 7        | 61.889845    | 51.727326    | 10.162073    | 0.000446     |
+
+###########################################################
+# PRUEBAS CON ARCHIVO: numeros_5M_maxint.txt
+###########################################################
+
+--- Prueba Secuencial (numeros_5M_maxint.txt) ---
+Arreglo original (N=5000000) leído desde /home/cp200807/numeros_5M_maxint.txt.
+
+--- Resultados Secuenciales ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 122434
+Tiempo de ejecución total: 170.667642 segundos
+
+--- Pruebas Paralelas (numeros_5M_maxint.txt) ---
+
+Ejecutando con 2 procesos...
+Arreglo original (N=5000000) leído desde /home/cp200807/numeros_5M_maxint.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 122434
+Tiempo de ejecución total (Proceso 0): 118.863652 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 118.863652   | 1.762863     | 113.325611   | 3.775178     |
+| 1        | 118.852954   | 113.601722   | 5.250653     | 0.000579     |
+
+Ejecutando con 4 procesos...
+Arreglo original (N=5000000) leído desde /home/cp200807/numeros_5M_maxint.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 122434
+Tiempo de ejecución total (Proceso 0): 146.304714 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 146.304714   | 141.854608   | 0.691156     | 3.758950     |
+| 1        | 146.292512   | 10.910738    | 135.381414   | 0.000360     |
+| 2        | 146.295729   | 9.831038     | 136.464607   | 0.000084     |
+| 3        | 146.294149   | 10.082641    | 136.211434   | 0.000074     |
+
+Ejecutando con 8 procesos...
+Arreglo original (N=5000000) leído desde /home/cp200807/numeros_5M_maxint.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 122434
+Tiempo de ejecución total (Proceso 0): 59.625694 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 59.625694    | 0.579666     | 55.259687    | 3.786340     |
+| 1        | 59.620741    | 0.338569     | 59.281987    | 0.000185     |
+| 2        | 59.622374    | 0.337820     | 59.284377    | 0.000177     |
+| 3        | 59.622806    | 0.335305     | 59.287355    | 0.000147     |
+| 4        | 59.620185    | 1.154401     | 58.465172    | 0.000612     |
+| 5        | 59.623022    | 54.243532    | 5.378641     | 0.000849     |
+| 6        | 59.625867    | 28.252950    | 31.372513    | 0.000403     |
+| 7        | 59.622455    | 31.534217    | 28.087798    | 0.000441     |
+
+FIN DE PRUEBAS: mar nov  4 12:52:21 UTC 2025
+============================================================
+============================================================
+INICIO DE PRUEBAS: Wed Nov  5 03:00:01 UTC 2025
+============================================================
+
+###########################################################
+# PRUEBAS CON ARCHIVO: numeros_10M_MaxInt.txt
+###########################################################
+
+--- Prueba Secuencial (numeros_10M_MaxInt.txt) ---
+Arreglo original (N=10000000) leído desde /home/cp200807/numeros_10M_MaxInt.txt.
+
+--- Resultados Secuenciales ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 244934
+Tiempo de ejecución total: 341.736817 segundos
+
+--- Pruebas Paralelas (numeros_10M_MaxInt.txt) ---
+
+Ejecutando con 2 procesos...
+Arreglo original (N=10000000) leído desde /home/cp200807/numeros_10M_MaxInt.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 244934
+Tiempo de ejecución total (Proceso 0): 189.212862 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 189.212862   | 85.254809    | 96.375227    | 7.582826     |
+| 1        | 189.195806   | 178.894508   | 10.300883    | 0.000415     |
+
+Ejecutando con 4 procesos...
+Arreglo original (N=10000000) leído desde /home/cp200807/numeros_10M_MaxInt.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 244934
+Tiempo de ejecución total (Proceso 0): 114.559312 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 114.559312   | 4.476943     | 102.498714   | 7.583655     |
+| 1        | 114.550035   | 42.085174    | 72.464106    | 0.000755     |
+| 2        | 114.552281   | 82.157068    | 32.394734    | 0.000479     |
+| 3        | 114.551302   | 104.810563   | 9.740312     | 0.000427     |
+
+Ejecutando con 8 procesos...
+Arreglo original (N=10000000) leído desde /home/cp200807/numeros_10M_MaxInt.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 244934
+Tiempo de ejecución total (Proceso 0): 61.984413 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 61.984413    | 2.758792     | 51.627699    | 7.597922     |
+| 1        | 61.976789    | 1.637186     | 60.338882    | 0.000721     |
+| 2        | 61.980564    | 3.340051     | 58.639843    | 0.000670     |
+| 3        | 61.978807    | 47.367476    | 14.610756    | 0.000576     |
+| 4        | 61.978578    | 37.095490    | 24.882679    | 0.000409     |
+| 5        | 61.979194    | 42.777364    | 19.201390    | 0.000440     |
+| 6        | 61.984168    | 47.846927    | 14.136830    | 0.000412     |
+| 7        | 61.978417    | 51.727040    | 10.250973    | 0.000405     |
+
+###########################################################
+# PRUEBAS CON ARCHIVO: numeros_5M_maxint.txt
+###########################################################
+
+--- Prueba Secuencial (numeros_5M_maxint.txt) ---
+Arreglo original (N=5000000) leído desde /home/cp200807/numeros_5M_maxint.txt.
+
+--- Resultados Secuenciales ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 122434
+Tiempo de ejecución total: 170.691100 segundos
+
+--- Pruebas Paralelas (numeros_5M_maxint.txt) ---
+
+Ejecutando con 2 procesos...
+Arreglo original (N=5000000) leído desde /home/cp200807/numeros_5M_maxint.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 122434
+Tiempo de ejecución total (Proceso 0): 118.943587 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 118.943587   | 1.773122     | 113.323375   | 3.847090     |
+| 1        | 118.932879   | 113.612056   | 5.320259     | 0.000564     |
+
+Ejecutando con 4 procesos...
+Arreglo original (N=5000000) leído desde /home/cp200807/numeros_5M_maxint.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 122434
+Tiempo de ejecución total (Proceso 0): 146.309784 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 146.309784   | 141.845093   | 0.688470     | 3.776221     |
+| 1        | 146.297937   | 10.913705    | 135.383862   | 0.000371     |
+| 2        | 146.300798   | 9.831523     | 136.469199   | 0.000076     |
+| 3        | 146.299547   | 10.082397    | 136.217080   | 0.000070     |
+
+Ejecutando con 8 procesos...
+Arreglo original (N=5000000) leído desde /home/cp200807/numeros_5M_maxint.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 122434
+Tiempo de ejecución total (Proceso 0): 59.608569 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 59.608569    | 0.580479     | 55.261992    | 3.766098     |
+| 1        | 59.599455    | 0.338611     | 59.260688    | 0.000156     |
+| 2        | 59.604911    | 0.338432     | 59.266337    | 0.000142     |
+| 3        | 59.602430    | 0.334424     | 59.267878    | 0.000128     |
+| 4        | 59.602995    | 1.151161     | 58.451231    | 0.000603     |
+| 5        | 59.601750    | 54.244654    | 5.356264     | 0.000833     |
+| 6        | 59.608359    | 28.254109    | 31.353889    | 0.000361     |
+| 7        | 59.602091    | 31.537529    | 28.064243    | 0.000318     |
+
+FIN DE PRUEBAS: Wed Nov  5 03:20:39 UTC 2025
+============================================================
+============================================================
+INICIO DE PRUEBAS: Wed Nov  5 04:30:01 UTC 2025
+============================================================
+
+###########################################################
+# PRUEBAS CON ARCHIVO: numeros_10M_MaxInt.txt
+###########################################################
+
+--- Prueba Secuencial (numeros_10M_MaxInt.txt) ---
+Arreglo original (N=10000000) leído desde /home/cp200807/numeros_10M_MaxInt.txt.
+
+--- Resultados Secuenciales ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 244934
+Tiempo de ejecución total: 341.731078 segundos
+
+--- Pruebas Paralelas (numeros_10M_MaxInt.txt) ---
+
+Ejecutando con 2 procesos...
+Arreglo original (N=10000000) leído desde /home/cp200807/numeros_10M_MaxInt.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 244934
+Tiempo de ejecución total (Proceso 0): 189.098062 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 189.098062   | 85.232642    | 96.312598    | 7.552822     |
+| 1        | 189.081019   | 178.894697   | 10.185811    | 0.000511     |
+
+Ejecutando con 4 procesos...
+Arreglo original (N=10000000) leído desde /home/cp200807/numeros_10M_MaxInt.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 244934
+Tiempo de ejecución total (Proceso 0): 114.704561 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 114.704561   | 4.480104     | 102.510841   | 7.713616     |
+| 1        | 114.695220   | 42.087225    | 72.607079    | 0.000916     |
+| 2        | 114.697523   | 82.159695    | 32.537251    | 0.000577     |
+| 3        | 114.696479   | 104.810826   | 9.885239     | 0.000413     |
+
+Ejecutando con 8 procesos...
+Arreglo original (N=10000000) leído desde /home/cp200807/numeros_10M_MaxInt.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 244934
+Tiempo de ejecución total (Proceso 0): 61.933368 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 61.933368    | 2.771699     | 51.633475    | 7.528194     |
+| 1        | 61.925824    | 1.637609     | 60.287308    | 0.000907     |
+| 2        | 61.929568    | 3.341596     | 58.587268    | 0.000704     |
+| 3        | 61.928300    | 47.368736    | 14.559003    | 0.000561     |
+| 4        | 61.927592    | 37.098791    | 24.828397    | 0.000405     |
+| 5        | 61.928222    | 42.777109    | 19.150743    | 0.000370     |
+| 6        | 61.933172    | 47.863196    | 14.069404    | 0.000572     |
+| 7        | 61.927959    | 51.728821    | 10.198715    | 0.000422     |
+
+###########################################################
+# PRUEBAS CON ARCHIVO: numeros_5M_maxint.txt
+###########################################################
+
+--- Prueba Secuencial (numeros_5M_maxint.txt) ---
+Arreglo original (N=5000000) leído desde /home/cp200807/numeros_5M_maxint.txt.
+
+--- Resultados Secuenciales ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 122434
+Tiempo de ejecución total: 170.689517 segundos
+
+--- Pruebas Paralelas (numeros_5M_maxint.txt) ---
+
+Ejecutando con 2 procesos...
+Arreglo original (N=5000000) leído desde /home/cp200807/numeros_5M_maxint.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 122434
+Tiempo de ejecución total (Proceso 0): 118.892925 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 118.892925   | 1.771560     | 113.332202   | 3.789163     |
+| 1        | 118.882218   | 113.622147   | 5.259396     | 0.000675     |
+
+Ejecutando con 4 procesos...
+Arreglo original (N=5000000) leído desde /home/cp200807/numeros_5M_maxint.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 122434
+Tiempo de ejecución total (Proceso 0): 146.288406 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 146.288406   | 141.839079   | 0.678319     | 3.771009     |
+| 1        | 146.276578   | 10.912866    | 135.363283   | 0.000429     |
+| 2        | 146.279418   | 9.830006     | 136.449338   | 0.000074     |
+| 3        | 146.278182   | 10.082209    | 136.195901   | 0.000072     |
+
+Ejecutando con 8 procesos...
+Arreglo original (N=5000000) leído desde /home/cp200807/numeros_5M_maxint.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 122434
+Tiempo de ejecución total (Proceso 0): 59.602353 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 59.602353    | 0.577148     | 55.258714    | 3.766491     |
+| 1        | 59.596153    | 0.339034     | 59.256947    | 0.000173     |
+| 2        | 59.598660    | 0.338325     | 59.260194    | 0.000141     |
+| 3        | 59.597427    | 0.334332     | 59.262971    | 0.000124     |
+| 4        | 59.596806    | 1.155568     | 58.440627    | 0.000611     |
+| 5        | 59.598459    | 54.248416    | 5.349472     | 0.000571     |
+| 6        | 59.602115    | 28.253819    | 31.347944    | 0.000352     |
+| 7        | 59.597084    | 31.534691    | 28.062064    | 0.000328     |
+
+FIN DE PRUEBAS: Wed Nov  5 04:50:38 UTC 2025
+============================================================
+============================================================
+INICIO DE PRUEBAS: Wed Nov  5 05:30:01 UTC 2025
+============================================================
+
+###########################################################
+# PRUEBAS CON ARCHIVO: numeros_10M_MaxInt.txt
+###########################################################
+
+--- Prueba Secuencial (numeros_10M_MaxInt.txt) ---
+Arreglo original (N=10000000) leído desde /home/cp200807/numeros_10M_MaxInt.txt.
+
+--- Resultados Secuenciales ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 244934
+Tiempo de ejecución total: 341.847863 segundos
+
+--- Pruebas Paralelas (numeros_10M_MaxInt.txt) ---
+
+Ejecutando con 2 procesos...
+Arreglo original (N=10000000) leído desde /home/cp200807/numeros_10M_MaxInt.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 244934
+Tiempo de ejecución total (Proceso 0): 189.107586 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 189.107586   | 85.212624    | 96.346082    | 7.548880     |
+| 1        | 189.090546   | 178.892904   | 10.197229    | 0.000413     |
+
+Ejecutando con 4 procesos...
+Arreglo original (N=10000000) leído desde /home/cp200807/numeros_10M_MaxInt.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 244934
+Tiempo de ejecución total (Proceso 0): 114.584553 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 114.584553   | 4.521667     | 102.470301   | 7.592584     |
+| 1        | 114.575286   | 42.083310    | 72.491208    | 0.000768     |
+| 2        | 114.577535   | 82.158423    | 32.418633    | 0.000480     |
+| 3        | 114.576578   | 104.810493   | 9.765669     | 0.000416     |
+
+Ejecutando con 8 procesos...
+Arreglo original (N=10000000) leído desde /home/cp200807/numeros_10M_MaxInt.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 244934
+Tiempo de ejecución total (Proceso 0): 61.940548 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 61.940548    | 2.775483     | 51.624292    | 7.540773     |
+| 1        | 61.934927    | 1.637630     | 60.296595    | 0.000701     |
+| 2        | 61.936754    | 3.338589     | 58.597500    | 0.000666     |
+| 3        | 61.935615    | 47.366564    | 14.568442    | 0.000609     |
+| 4        | 61.934775    | 37.095056    | 24.839302    | 0.000417     |
+| 5        | 61.937315    | 42.777034    | 19.159911    | 0.000370     |
+| 6        | 61.940351    | 47.846591    | 14.093356    | 0.000404     |
+| 7        | 61.935287    | 51.728241    | 10.206604    | 0.000442     |
+
+###########################################################
+# PRUEBAS CON ARCHIVO: numeros_5M_maxint.txt
+###########################################################
+
+--- Prueba Secuencial (numeros_5M_maxint.txt) ---
+Arreglo original (N=5000000) leído desde /home/cp200807/numeros_5M_maxint.txt.
+
+--- Resultados Secuenciales ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 122434
+Tiempo de ejecución total: 170.698963 segundos
+
+--- Pruebas Paralelas (numeros_5M_maxint.txt) ---
+
+Ejecutando con 2 procesos...
+Arreglo original (N=5000000) leído desde /home/cp200807/numeros_5M_maxint.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 122434
+Tiempo de ejecución total (Proceso 0): 118.889231 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 118.889231   | 1.797301     | 113.318533   | 3.773397     |
+| 1        | 118.878568   | 113.620042   | 5.257954     | 0.000572     |
+
+Ejecutando con 4 procesos...
+Arreglo original (N=5000000) leído desde /home/cp200807/numeros_5M_maxint.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 122434
+Tiempo de ejecución total (Proceso 0): 146.310887 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 146.310887   | 141.847113   | 0.679034     | 3.784740     |
+| 1        | 146.299032   | 10.912262    | 135.386388   | 0.000383     |
+| 2        | 146.301907   | 9.830753     | 136.471080   | 0.000073     |
+| 3        | 146.300661   | 10.082848    | 136.217741   | 0.000072     |
+
+Ejecutando con 8 procesos...
+Arreglo original (N=5000000) leído desde /home/cp200807/numeros_5M_maxint.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 122434
+Tiempo de ejecución total (Proceso 0): 59.607688 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 59.607688    | 0.585447     | 55.247669    | 3.774572     |
+| 1        | 59.601310    | 0.339174     | 59.261968    | 0.000169     |
+| 2        | 59.605451    | 0.339198     | 59.266121    | 0.000132     |
+| 3        | 59.604109    | 0.334414     | 59.269572    | 0.000123     |
+| 4        | 59.602198    | 1.149803     | 58.451780    | 0.000614     |
+| 5        | 59.603618    | 54.249828    | 5.352888     | 0.000902     |
+| 6        | 59.609027    | 28.253610    | 31.354957    | 0.000460     |
+| 7        | 59.603764    | 31.537487    | 28.065977    | 0.000300     |
+
+FIN DE PRUEBAS: Wed Nov  5 05:50:37 UTC 2025
+============================================================
+============================================================
+INICIO DE PRUEBAS: Wed Nov  5 06:30:01 UTC 2025
+============================================================
+
+###########################################################
+# PRUEBAS CON ARCHIVO: numeros_10M_MaxInt.txt
+###########################################################
+
+--- Prueba Secuencial (numeros_10M_MaxInt.txt) ---
+Arreglo original (N=10000000) leído desde /home/cp200807/numeros_10M_MaxInt.txt.
+
+--- Resultados Secuenciales ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 244934
+Tiempo de ejecución total: 345.389045 segundos
+
+--- Pruebas Paralelas (numeros_10M_MaxInt.txt) ---
+
+Ejecutando con 2 procesos...
+Arreglo original (N=10000000) leído desde /home/cp200807/numeros_10M_MaxInt.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 244934
+Tiempo de ejecución total (Proceso 0): 189.166343 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 189.166343   | 85.522240    | 96.054239    | 7.589865     |
+| 1        | 189.149296   | 178.892125   | 10.256756    | 0.000415     |
+
+Ejecutando con 4 procesos...
+Arreglo original (N=10000000) leído desde /home/cp200807/numeros_10M_MaxInt.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 244934
+Tiempo de ejecución total (Proceso 0): 115.934705 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 115.934705   | 4.539547     | 102.440823   | 8.954334     |
+| 1        | 115.925325   | 42.081965    | 73.842588    | 0.000771     |
+| 2        | 115.927631   | 82.157641    | 33.769512    | 0.000478     |
+| 3        | 115.926602   | 104.810291   | 11.115864    | 0.000447     |
+
+Ejecutando con 8 procesos...
+Arreglo original (N=10000000) leído desde /home/cp200807/numeros_10M_MaxInt.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 244934
+Tiempo de ejecución total (Proceso 0): 62.526524 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 62.526524    | 2.798535     | 51.593636    | 8.134353     |
+| 1        | 62.518083    | 1.634055     | 60.883327    | 0.000701     |
+| 2        | 62.523271    | 3.337858     | 59.184753    | 0.000660     |
+| 3        | 62.521707    | 47.371325    | 15.149763    | 0.000619     |
+| 4        | 62.520725    | 37.097484    | 25.422842    | 0.000399     |
+| 5        | 62.520483    | 42.777140    | 19.742907    | 0.000436     |
+| 6        | 62.526948    | 47.845443    | 14.681106    | 0.000399     |
+| 7        | 62.521358    | 51.730532    | 10.790247    | 0.000578     |
+
+###########################################################
+# PRUEBAS CON ARCHIVO: numeros_5M_maxint.txt
+###########################################################
+
+--- Prueba Secuencial (numeros_5M_maxint.txt) ---
+Arreglo original (N=5000000) leído desde /home/cp200807/numeros_5M_maxint.txt.
+
+--- Resultados Secuenciales ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 122434
+Tiempo de ejecución total: 171.488134 segundos
+
+--- Pruebas Paralelas (numeros_5M_maxint.txt) ---
+
+Ejecutando con 2 procesos...
+Arreglo original (N=5000000) leído desde /home/cp200807/numeros_5M_maxint.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 122434
+Tiempo de ejecución total (Proceso 0): 118.951991 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 118.951991   | 1.812796     | 113.322693   | 3.816502     |
+| 1        | 118.941279   | 113.621192   | 5.319492     | 0.000595     |
+
+Ejecutando con 4 procesos...
+Arreglo original (N=5000000) leído desde /home/cp200807/numeros_5M_maxint.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 122434
+Tiempo de ejecución total (Proceso 0): 146.381163 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 146.381163   | 141.919135   | 0.675225     | 3.786803     |
+| 1        | 146.368322   | 10.910243    | 135.457709   | 0.000370     |
+| 2        | 146.372276   | 9.831442     | 136.540759   | 0.000075     |
+| 3        | 146.369930   | 10.081104    | 136.288762   | 0.000064     |
+
+Ejecutando con 8 procesos...
+Arreglo original (N=5000000) leído desde /home/cp200807/numeros_5M_maxint.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 122434
+Tiempo de ejecución total (Proceso 0): 59.597877 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 59.597877    | 0.581421     | 55.238692    | 3.777764     |
+| 1        | 59.591509    | 0.338903     | 59.252443    | 0.000163     |
+| 2        | 59.594223    | 0.338206     | 59.255887    | 0.000130     |
+| 3        | 59.593165    | 0.334667     | 59.258366    | 0.000131     |
+| 4        | 59.592337    | 1.149923     | 58.441804    | 0.000610     |
+| 5        | 59.593809    | 54.244650    | 5.348521     | 0.000638     |
+| 6        | 59.597676    | 28.253695    | 31.343624    | 0.000357     |
+| 7        | 59.592818    | 31.537848    | 28.054579    | 0.000391     |
+
+FIN DE PRUEBAS: Wed Nov  5 06:50:45 UTC 2025
+============================================================
+============================================================
+INICIO DE PRUEBAS: Thu Nov  6 03:00:01 UTC 2025
+============================================================
+
+###########################################################
+# PRUEBAS CON ARCHIVO: numeros_10M_MaxInt.txt
+###########################################################
+
+--- Prueba Secuencial (numeros_10M_MaxInt.txt) ---
+Arreglo original (N=10000000) leído desde /home/cp200807/numeros_10M_MaxInt.txt.
+
+--- Resultados Secuenciales ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 244934
+Tiempo de ejecución total: 341.742200 segundos
+
+--- Pruebas Paralelas (numeros_10M_MaxInt.txt) ---
+
+Ejecutando con 2 procesos...
+Arreglo original (N=10000000) leído desde /home/cp200807/numeros_10M_MaxInt.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 244934
+Tiempo de ejecución total (Proceso 0): 189.138827 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 189.138827   | 85.299821    | 96.280873    | 7.558133     |
+| 1        | 189.121779   | 178.881607   | 10.239759    | 0.000413     |
+
+Ejecutando con 4 procesos...
+Arreglo original (N=10000000) leído desde /home/cp200807/numeros_10M_MaxInt.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 244934
+Tiempo de ejecución total (Proceso 0): 114.830216 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 114.830216   | 4.467424     | 102.645052   | 7.717740     |
+| 1        | 114.820868   | 42.077537    | 72.742567    | 0.000765     |
+| 2        | 114.823171   | 82.158595    | 32.664047    | 0.000530     |
+| 3        | 114.822155   | 104.812190   | 10.009520    | 0.000445     |
+
+Ejecutando con 8 procesos...
+Arreglo original (N=10000000) leído desde /home/cp200807/numeros_10M_MaxInt.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 244934
+Tiempo de ejecución total (Proceso 0): 61.954957 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 61.954957    | 2.762492     | 51.631399    | 7.561065     |
+| 1        | 61.949553    | 1.633269     | 60.315575    | 0.000709     |
+| 2        | 61.951494    | 3.337718     | 58.613133    | 0.000643     |
+| 3        | 61.951733    | 47.373034    | 14.578004    | 0.000695     |
+| 4        | 61.949222    | 37.096158    | 24.852537    | 0.000526     |
+| 5        | 61.951960    | 42.778181    | 19.173419    | 0.000360     |
+| 6        | 61.955138    | 47.847061    | 14.107662    | 0.000414     |
+| 7        | 61.951260    | 51.725834    | 10.225045    | 0.000381     |
+
+###########################################################
+# PRUEBAS CON ARCHIVO: numeros_5M_maxint.txt
+###########################################################
+
+--- Prueba Secuencial (numeros_5M_maxint.txt) ---
+Arreglo original (N=5000000) leído desde /home/cp200807/numeros_5M_maxint.txt.
+
+--- Resultados Secuenciales ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 122434
+Tiempo de ejecución total: 170.710160 segundos
+
+--- Pruebas Paralelas (numeros_5M_maxint.txt) ---
+
+Ejecutando con 2 procesos...
+Arreglo original (N=5000000) leído desde /home/cp200807/numeros_5M_maxint.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 122434
+Tiempo de ejecución total (Proceso 0): 118.886125 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 118.886125   | 1.787426     | 113.314239   | 3.784459     |
+| 1        | 118.875423   | 113.603405   | 5.271428     | 0.000590     |
+
+Ejecutando con 4 procesos...
+Arreglo original (N=5000000) leído desde /home/cp200807/numeros_5M_maxint.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 122434
+Tiempo de ejecución total (Proceso 0): 146.328725 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 146.328725   | 141.844779   | 0.684388     | 3.799557     |
+| 1        | 146.315876   | 10.908662    | 135.406849   | 0.000365     |
+| 2        | 146.319787   | 9.830382     | 136.489330   | 0.000075     |
+| 3        | 146.317479   | 10.082208    | 136.235192   | 0.000079     |
+
+Ejecutando con 8 procesos...
+Arreglo original (N=5000000) leído desde /home/cp200807/numeros_5M_maxint.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 122434
+Tiempo de ejecución total (Proceso 0): 59.586812 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 59.586812    | 0.583637     | 55.243381    | 3.759794     |
+| 1        | 59.578581    | 0.338530     | 59.239880    | 0.000171     |
+| 2        | 59.583454    | 0.338706     | 59.244627    | 0.000121     |
+| 3        | 59.581912    | 0.334742     | 59.247043    | 0.000128     |
+| 4        | 59.581335    | 1.152192     | 58.428519    | 0.000624     |
+| 5        | 59.580868    | 54.243935    | 5.336369     | 0.000564     |
+| 6        | 59.586941    | 28.253325    | 31.333274    | 0.000342     |
+| 7        | 59.581577    | 31.537921    | 28.043154    | 0.000502     |
+
+FIN DE PRUEBAS: Thu Nov  6 03:20:38 UTC 2025
+============================================================
+============================================================
+INICIO DE PRUEBAS: Thu Nov  6 04:30:01 UTC 2025
+============================================================
+
+###########################################################
+# PRUEBAS CON ARCHIVO: numeros_10M_MaxInt.txt
+###########################################################
+
+--- Prueba Secuencial (numeros_10M_MaxInt.txt) ---
+Arreglo original (N=10000000) leído desde /home/cp200807/numeros_10M_MaxInt.txt.
+
+--- Resultados Secuenciales ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 244934
+Tiempo de ejecución total: 341.744414 segundos
+
+--- Pruebas Paralelas (numeros_10M_MaxInt.txt) ---
+
+Ejecutando con 2 procesos...
+Arreglo original (N=10000000) leído desde /home/cp200807/numeros_10M_MaxInt.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 244934
+Tiempo de ejecución total (Proceso 0): 189.106813 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 189.106813   | 85.230475    | 96.322205    | 7.554133     |
+| 1        | 189.089767   | 178.885006   | 10.204346    | 0.000416     |
+
+Ejecutando con 4 procesos...
+Arreglo original (N=10000000) leído desde /home/cp200807/numeros_10M_MaxInt.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 244934
+Tiempo de ejecución total (Proceso 0): 114.577488 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 114.577488   | 4.513274     | 102.474847   | 7.589367     |
+| 1        | 114.568261   | 42.079950    | 72.487548    | 0.000763     |
+| 2        | 114.570451   | 82.156548    | 32.413440    | 0.000463     |
+| 3        | 114.569559   | 104.812989   | 9.756150     | 0.000420     |
+
+Ejecutando con 8 procesos...
+Arreglo original (N=10000000) leído desde /home/cp200807/numeros_10M_MaxInt.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 244934
+Tiempo de ejecución total (Proceso 0): 61.964009 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 61.964009    | 2.770945     | 51.614679    | 7.578385     |
+| 1        | 61.960005    | 1.631741     | 60.327573    | 0.000691     |
+| 2        | 61.961889    | 3.339387     | 58.621859    | 0.000643     |
+| 3        | 61.960665    | 47.372714    | 14.587286    | 0.000665     |
+| 4        | 61.958252    | 37.095302    | 24.862511    | 0.000439     |
+| 5        | 61.962394    | 42.776183    | 19.185827    | 0.000384     |
+| 6        | 61.965492    | 47.846012    | 14.119064    | 0.000415     |
+| 7        | 61.960321    | 51.726000    | 10.233918    | 0.000402     |
+
+###########################################################
+# PRUEBAS CON ARCHIVO: numeros_5M_maxint.txt
+###########################################################
+
+--- Prueba Secuencial (numeros_5M_maxint.txt) ---
+Arreglo original (N=5000000) leído desde /home/cp200807/numeros_5M_maxint.txt.
+
+--- Resultados Secuenciales ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 122434
+Tiempo de ejecución total: 170.718189 segundos
+
+--- Pruebas Paralelas (numeros_5M_maxint.txt) ---
+
+Ejecutando con 2 procesos...
+Arreglo original (N=5000000) leído desde /home/cp200807/numeros_5M_maxint.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 122434
+Tiempo de ejecución total (Proceso 0): 118.901432 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 118.901432   | 1.801752     | 113.314755   | 3.784925     |
+| 1        | 118.890717   | 113.609762   | 5.280368     | 0.000587     |
+
+Ejecutando con 4 procesos...
+Arreglo original (N=5000000) leído desde /home/cp200807/numeros_5M_maxint.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 122434
+Tiempo de ejecución total (Proceso 0): 146.295589 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 146.295589   | 141.851994   | 0.674539     | 3.769055     |
+| 1        | 146.282739   | 10.909431    | 135.372949   | 0.000359     |
+| 2        | 146.286641   | 9.829881     | 136.456690   | 0.000071     |
+| 3        | 146.284364   | 10.081060    | 136.203236   | 0.000068     |
+
+Ejecutando con 8 procesos...
+Arreglo original (N=5000000) leído desde /home/cp200807/numeros_5M_maxint.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 122434
+Tiempo de ejecución total (Proceso 0): 59.683004 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 59.683004    | 0.579514     | 55.248399    | 3.855092     |
+| 1        | 59.677253    | 0.338943     | 59.338115    | 0.000195     |
+| 2        | 59.681034    | 0.338238     | 59.342664    | 0.000133     |
+| 3        | 59.679886    | 0.334538     | 59.345233    | 0.000115     |
+| 4        | 59.677468    | 1.147896     | 58.528945    | 0.000627     |
+| 5        | 59.679558    | 54.248337    | 5.430659     | 0.000562     |
+| 6        | 59.684494    | 28.255988    | 31.428155    | 0.000351     |
+| 7        | 59.679552    | 31.534647    | 28.144567    | 0.000338     |
+
+FIN DE PRUEBAS: Thu Nov  6 04:50:38 UTC 2025
+============================================================
+============================================================
+INICIO DE PRUEBAS: Thu Nov  6 05:30:01 UTC 2025
+============================================================
+
+###########################################################
+# PRUEBAS CON ARCHIVO: numeros_10M_MaxInt.txt
+###########################################################
+
+--- Prueba Secuencial (numeros_10M_MaxInt.txt) ---
+Arreglo original (N=10000000) leído desde /home/cp200807/numeros_10M_MaxInt.txt.
+
+--- Resultados Secuenciales ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 244934
+Tiempo de ejecución total: 341.803258 segundos
+
+--- Pruebas Paralelas (numeros_10M_MaxInt.txt) ---
+
+Ejecutando con 2 procesos...
+Arreglo original (N=10000000) leído desde /home/cp200807/numeros_10M_MaxInt.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 244934
+Tiempo de ejecución total (Proceso 0): 189.116170 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 189.116170   | 85.267862    | 96.287218    | 7.561090     |
+| 1        | 189.099131   | 178.884235   | 10.214466    | 0.000430     |
+
+Ejecutando con 4 procesos...
+Arreglo original (N=10000000) leído desde /home/cp200807/numeros_10M_MaxInt.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 244934
+Tiempo de ejecución total (Proceso 0): 114.560068 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 114.560068   | 4.468646     | 102.511472   | 7.579951     |
+| 1        | 114.550858   | 42.078864    | 72.471218    | 0.000776     |
+| 2        | 114.553054   | 82.159576    | 32.392975    | 0.000503     |
+| 3        | 114.552143   | 104.809544   | 9.742198     | 0.000401     |
+
+Ejecutando con 8 procesos...
+Arreglo original (N=10000000) leído desde /home/cp200807/numeros_10M_MaxInt.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 244934
+Tiempo de ejecución total (Proceso 0): 61.966651 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 61.966651    | 2.750015     | 51.643214    | 7.573421     |
+| 1        | 61.961754    | 1.634320     | 60.326728    | 0.000706     |
+| 2        | 61.964335    | 3.335483     | 58.628210    | 0.000642     |
+| 3        | 61.963322    | 47.370260    | 14.592507    | 0.000555     |
+| 4        | 61.960884    | 37.093664    | 24.866811    | 0.000409     |
+| 5        | 61.964148    | 42.775812    | 19.187905    | 0.000431     |
+| 6        | 61.967978    | 47.847215    | 14.120304    | 0.000458     |
+| 7        | 61.962985    | 51.725004    | 10.237587    | 0.000394     |
+
+###########################################################
+# PRUEBAS CON ARCHIVO: numeros_5M_maxint.txt
+###########################################################
+
+--- Prueba Secuencial (numeros_5M_maxint.txt) ---
+Arreglo original (N=5000000) leído desde /home/cp200807/numeros_5M_maxint.txt.
+
+--- Resultados Secuenciales ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 122434
+Tiempo de ejecución total: 170.653707 segundos
+
+--- Pruebas Paralelas (numeros_5M_maxint.txt) ---
+
+Ejecutando con 2 procesos...
+Arreglo original (N=5000000) leído desde /home/cp200807/numeros_5M_maxint.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 122434
+Tiempo de ejecución total (Proceso 0): 118.879255 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 118.879255   | 1.765884     | 113.326535   | 3.786836     |
+| 1        | 118.868601   | 113.612612   | 5.255281     | 0.000708     |
+
+Ejecutando con 4 procesos...
+Arreglo original (N=5000000) leído desde /home/cp200807/numeros_5M_maxint.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 122434
+Tiempo de ejecución total (Proceso 0): 146.365273 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 146.365273   | 141.846407   | 0.691072     | 3.827794     |
+| 1        | 146.353415   | 10.910254    | 135.442782   | 0.000380     |
+| 2        | 146.356298   | 9.830233     | 136.525994   | 0.000071     |
+| 3        | 146.355037   | 10.081769    | 136.273192   | 0.000076     |
+
+Ejecutando con 8 procesos...
+Arreglo original (N=5000000) leído desde /home/cp200807/numeros_5M_maxint.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 122434
+Tiempo de ejecución total (Proceso 0): 59.596598 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 59.596598    | 0.588646     | 55.237293    | 3.770659     |
+| 1        | 59.587800    | 0.339463     | 59.248133    | 0.000204     |
+| 2        | 59.593180    | 0.338791     | 59.254264    | 0.000124     |
+| 3        | 59.590852    | 0.334386     | 59.256351    | 0.000114     |
+| 4        | 59.591315    | 1.148408     | 58.442312    | 0.000595     |
+| 5        | 59.590091    | 54.250408    | 5.339008     | 0.000675     |
+| 6        | 59.596629    | 28.253442    | 31.342792    | 0.000395     |
+| 7        | 59.590514    | 31.537356    | 28.052791    | 0.000367     |
+
+FIN DE PRUEBAS: Thu Nov  6 05:50:37 UTC 2025
+============================================================
+============================================================
+INICIO DE PRUEBAS: Thu Nov  6 06:30:02 UTC 2025
+============================================================
+
+###########################################################
+# PRUEBAS CON ARCHIVO: numeros_10M_MaxInt.txt
+###########################################################
+
+--- Prueba Secuencial (numeros_10M_MaxInt.txt) ---
+Arreglo original (N=10000000) leído desde /home/cp200807/numeros_10M_MaxInt.txt.
+
+--- Resultados Secuenciales ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 244934
+Tiempo de ejecución total: 343.176777 segundos
+
+--- Pruebas Paralelas (numeros_10M_MaxInt.txt) ---
+
+Ejecutando con 2 procesos...
+Arreglo original (N=10000000) leído desde /home/cp200807/numeros_10M_MaxInt.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 244934
+Tiempo de ejecución total (Proceso 0): 189.240531 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 189.240531   | 85.570784    | 96.052930    | 7.616817     |
+| 1        | 189.223493   | 178.881361   | 10.341729    | 0.000403     |
+
+Ejecutando con 4 procesos...
+Arreglo original (N=10000000) leído desde /home/cp200807/numeros_10M_MaxInt.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 244934
+Tiempo de ejecución total (Proceso 0): 114.660943 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 114.660943   | 4.848948     | 102.168083   | 7.643912     |
+| 1        | 114.651706   | 42.078225    | 72.572710    | 0.000771     |
+| 2        | 114.653917   | 82.157220    | 32.496219    | 0.000479     |
+| 3        | 114.652989   | 104.810454   | 9.842115     | 0.000420     |
+
+Ejecutando con 8 procesos...
+Arreglo original (N=10000000) leído desde /home/cp200807/numeros_10M_MaxInt.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 244934
+Tiempo de ejecución total (Proceso 0): 62.286746 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 62.286746    | 2.766309     | 51.597226    | 7.923210     |
+| 1        | 62.281105    | 1.632594     | 60.647821    | 0.000690     |
+| 2        | 62.282944    | 3.335224     | 58.947085    | 0.000636     |
+| 3        | 62.281864    | 47.373164    | 14.908119    | 0.000580     |
+| 4        | 62.280953    | 37.095177    | 25.185389    | 0.000387     |
+| 5        | 62.271728    | 42.776898    | 19.494393    | 0.000437     |
+| 6        | 62.286560    | 47.841442    | 14.444737    | 0.000381     |
+| 7        | 62.281524    | 51.729494    | 10.551648    | 0.000382     |
+
+###########################################################
+# PRUEBAS CON ARCHIVO: numeros_5M_maxint.txt
+###########################################################
+
+--- Prueba Secuencial (numeros_5M_maxint.txt) ---
+Arreglo original (N=5000000) leído desde /home/cp200807/numeros_5M_maxint.txt.
+
+--- Resultados Secuenciales ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 122434
+Tiempo de ejecución total: 171.488955 segundos
+
+--- Pruebas Paralelas (numeros_5M_maxint.txt) ---
+
+Ejecutando con 2 procesos...
+Arreglo original (N=5000000) leído desde /home/cp200807/numeros_5M_maxint.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 122434
+Tiempo de ejecución total (Proceso 0): 119.016404 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 119.016404   | 1.808180     | 113.322606   | 3.885618     |
+| 1        | 119.005699   | 113.611509   | 5.393586     | 0.000604     |
+
+Ejecutando con 4 procesos...
+Arreglo original (N=5000000) leído desde /home/cp200807/numeros_5M_maxint.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 122434
+Tiempo de ejecución total (Proceso 0): 146.446458 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 146.446458   | 141.910875   | 0.689099     | 3.846484     |
+| 1        | 146.434712   | 10.910892    | 135.523462   | 0.000358     |
+| 2        | 146.437490   | 9.830714     | 136.606699   | 0.000077     |
+| 3        | 146.436340   | 10.081828    | 136.354447   | 0.000065     |
+
+Ejecutando con 8 procesos...
+Arreglo original (N=5000000) leído desde /home/cp200807/numeros_5M_maxint.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 122434
+Tiempo de ejecución total (Proceso 0): 59.610865 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 59.610865    | 0.576473     | 55.257728    | 3.776664     |
+| 1        | 59.603377    | 0.339287     | 59.263934    | 0.000156     |
+| 2        | 59.608823    | 0.338468     | 59.270229    | 0.000126     |
+| 3        | 59.606514    | 0.334756     | 59.271610    | 0.000149     |
+| 4        | 59.605460    | 1.147740     | 58.457126    | 0.000594     |
+| 5        | 59.605684    | 54.251952    | 5.352918     | 0.000814     |
+| 6        | 59.612016    | 28.252299    | 31.359326    | 0.000391     |
+| 7        | 59.606166    | 31.536660    | 28.069196    | 0.000309     |
+
+FIN DE PRUEBAS: Thu Nov  6 06:50:43 UTC 2025
+============================================================
+============================================================
+INICIO DE PRUEBAS: Fri Nov  7 03:00:01 UTC 2025
+============================================================
+
+###########################################################
+# PRUEBAS CON ARCHIVO: numeros_10M_MaxInt.txt
+###########################################################
+
+--- Prueba Secuencial (numeros_10M_MaxInt.txt) ---
+Arreglo original (N=10000000) leído desde /home/cp200807/numeros_10M_MaxInt.txt.
+
+--- Resultados Secuenciales ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 244934
+Tiempo de ejecución total: 341.793187 segundos
+
+--- Pruebas Paralelas (numeros_10M_MaxInt.txt) ---
+
+Ejecutando con 2 procesos...
+Arreglo original (N=10000000) leído desde /home/cp200807/numeros_10M_MaxInt.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 244934
+Tiempo de ejecución total (Proceso 0): 189.129094 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 189.129094   | 85.196268    | 96.385636    | 7.547189     |
+| 1        | 189.112046   | 178.893089   | 10.218447    | 0.000510     |
+
+Ejecutando con 4 procesos...
+Arreglo original (N=10000000) leído desde /home/cp200807/numeros_10M_MaxInt.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 244934
+Tiempo de ejecución total (Proceso 0): 114.565515 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 114.565515   | 4.526594     | 102.470657   | 7.568264     |
+| 1        | 114.555576   | 42.084888    | 72.469743    | 0.000945     |
+| 2        | 114.558616   | 82.153484    | 32.404673    | 0.000459     |
+| 3        | 114.556839   | 104.807923   | 9.748469     | 0.000447     |
+
+Ejecutando con 8 procesos...
+Arreglo original (N=10000000) leído desde /home/cp200807/numeros_10M_MaxInt.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 244934
+Tiempo de ejecución total (Proceso 0): 61.954949 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 61.954949    | 2.765744     | 51.618012    | 7.571193     |
+| 1        | 61.950659    | 1.633819     | 60.316144    | 0.000697     |
+| 2        | 61.951447    | 3.340163     | 58.610407    | 0.000877     |
+| 3        | 61.951764    | 47.371664    | 14.579524    | 0.000577     |
+| 4        | 61.949174    | 37.095379    | 24.853395    | 0.000400     |
+| 5        | 61.953060    | 42.776788    | 19.175889    | 0.000383     |
+| 6        | 61.955091    | 47.846279    | 14.108352    | 0.000459     |
+| 7        | 61.951499    | 51.724234    | 10.226835    | 0.000430     |
+
+###########################################################
+# PRUEBAS CON ARCHIVO: numeros_5M_NEW.txt
+###########################################################
+
+--- Prueba Secuencial (numeros_5M_NEW.txt) ---
+Arreglo original (N=5000000) leído desde /home/cp200807/numeros_5M_NEW.txt.
+
+--- Resultados Secuenciales ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 121903
+Tiempo de ejecución total: 170.330641 segundos
+
+--- Pruebas Paralelas (numeros_5M_NEW.txt) ---
+
+Ejecutando con 2 procesos...
+Arreglo original (N=5000000) leído desde /home/cp200807/numeros_5M_NEW.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 121903
+Tiempo de ejecución total (Proceso 0): 166.209131 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 166.209131   | 161.936814   | 0.503305     | 3.769012     |
+| 1        | 166.194160   | 17.568637    | 148.625459   | 0.000064     |
+
+Ejecutando con 4 procesos...
+Arreglo original (N=5000000) leído desde /home/cp200807/numeros_5M_NEW.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 121903
+Tiempo de ejecución total (Proceso 0): 68.725264 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 68.725264    | 46.743776    | 18.217834    | 3.763654     |
+| 1        | 68.720105    | 63.479259    | 5.240359     | 0.000487     |
+| 2        | 68.721057    | 11.827016    | 56.893964    | 0.000077     |
+| 3        | 68.720887    | 12.210299    | 56.510482    | 0.000107     |
+
+Ejecutando con 8 procesos...
+Arreglo original (N=5000000) leído desde /home/cp200807/numeros_5M_NEW.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 121903
+Tiempo de ejecución total (Proceso 0): 64.802585 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 64.802585    | 2.403213     | 58.601748    | 3.797624     |
+| 1        | 64.797168    | 59.260056    | 5.536420     | 0.000693     |
+| 2        | 64.798901    | 19.510559    | 45.288036    | 0.000306     |
+| 3        | 64.798611    | 20.958671    | 43.839612    | 0.000328     |
+| 4        | 64.796545    | 3.729686     | 61.066798    | 0.000061     |
+| 5        | 64.799642    | 3.685870     | 61.113722    | 0.000051     |
+| 6        | 64.802696    | 3.778245     | 61.024394    | 0.000057     |
+| 7        | 64.798279    | 3.971523     | 60.826716    | 0.000041     |
+
+FIN DE PRUEBAS: Fri Nov  7 03:20:13 UTC 2025
+============================================================
+============================================================
+INICIO DE PRUEBAS: Fri Nov  7 04:30:01 UTC 2025
+============================================================
+
+###########################################################
+# PRUEBAS CON ARCHIVO: numeros_10M_MaxInt.txt
+###########################################################
+
+--- Prueba Secuencial (numeros_10M_MaxInt.txt) ---
+Arreglo original (N=10000000) leído desde /home/cp200807/numeros_10M_MaxInt.txt.
+
+--- Resultados Secuenciales ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 244934
+Tiempo de ejecución total: 341.814431 segundos
+
+--- Pruebas Paralelas (numeros_10M_MaxInt.txt) ---
+
+Ejecutando con 2 procesos...
+Arreglo original (N=10000000) leído desde /home/cp200807/numeros_10M_MaxInt.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 244934
+Tiempo de ejecución total (Proceso 0): 189.147961 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 189.147961   | 85.227583    | 96.351195    | 7.569183     |
+| 1        | 189.130917   | 178.890799   | 10.239669    | 0.000450     |
+
+Ejecutando con 4 procesos...
+Arreglo original (N=10000000) leído desde /home/cp200807/numeros_10M_MaxInt.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 244934
+Tiempo de ejecución total (Proceso 0): 114.596462 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 114.596462   | 4.513144     | 102.477921   | 7.605397     |
+| 1        | 114.587255   | 42.077761    | 72.508695    | 0.000798     |
+| 2        | 114.589434   | 82.153896    | 32.435090    | 0.000449     |
+| 3        | 114.588531   | 104.810377   | 9.777723     | 0.000431     |
+
+Ejecutando con 8 procesos...
+Arreglo original (N=10000000) leído desde /home/cp200807/numeros_10M_MaxInt.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 244934
+Tiempo de ejecución total (Proceso 0): 61.966571 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 61.966571    | 2.764271     | 51.627947    | 7.574353     |
+| 1        | 61.959057    | 1.632930     | 60.325431    | 0.000695     |
+| 2        | 61.962720    | 3.338202     | 58.623855    | 0.000664     |
+| 3        | 61.961416    | 47.369573    | 14.591300    | 0.000543     |
+| 4        | 61.960842    | 37.094669    | 24.865775    | 0.000398     |
+| 5        | 61.961457    | 42.775516    | 19.185531    | 0.000410     |
+| 6        | 61.966318    | 47.846592    | 14.119300    | 0.000425     |
+| 7        | 61.961074    | 51.727204    | 10.233421    | 0.000449     |
+
+###########################################################
+# PRUEBAS CON ARCHIVO: numeros_5M_NEW.txt
+###########################################################
+
+--- Prueba Secuencial (numeros_5M_NEW.txt) ---
+Arreglo original (N=5000000) leído desde /home/cp200807/numeros_5M_NEW.txt.
+
+--- Resultados Secuenciales ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 121903
+Tiempo de ejecución total: 170.292648 segundos
+
+--- Pruebas Paralelas (numeros_5M_NEW.txt) ---
+
+Ejecutando con 2 procesos...
+Arreglo original (N=5000000) leído desde /home/cp200807/numeros_5M_NEW.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 121903
+Tiempo de ejecución total (Proceso 0): 166.182886 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 166.182886   | 161.908370   | 0.505719     | 3.768797     |
+| 1        | 166.167925   | 17.568888    | 148.598963   | 0.000074     |
+
+Ejecutando con 4 procesos...
+Arreglo original (N=5000000) leído desde /home/cp200807/numeros_5M_NEW.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 121903
+Tiempo de ejecución total (Proceso 0): 68.922021 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 68.922021    | 46.719037    | 18.258171    | 3.944812     |
+| 1        | 68.916808    | 63.495435    | 5.420893     | 0.000480     |
+| 2        | 68.917801    | 11.827697    | 57.090030    | 0.000074     |
+| 3        | 68.917579    | 12.210375    | 56.707094    | 0.000110     |
+
+Ejecutando con 8 procesos...
+Arreglo original (N=5000000) leído desde /home/cp200807/numeros_5M_NEW.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 121903
+Tiempo de ejecución total (Proceso 0): 64.800358 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 64.800358    | 2.398500     | 58.615566    | 3.786291     |
+| 1        | 64.795889    | 59.261881    | 5.533328     | 0.000680     |
+| 2        | 64.796381    | 19.509815    | 45.286264    | 0.000303     |
+| 3        | 64.795363    | 20.958585    | 43.836479    | 0.000299     |
+| 4        | 64.794341    | 3.730347     | 61.063925    | 0.000069     |
+| 5        | 64.798367    | 3.685942     | 61.112352    | 0.000073     |
+| 6        | 64.800138    | 3.777865     | 61.022218    | 0.000055     |
+| 7        | 64.795023    | 3.970942     | 60.824034    | 0.000047     |
+
+FIN DE PRUEBAS: Fri Nov  7 04:50:08 UTC 2025
+============================================================
+============================================================
+INICIO DE PRUEBAS: Fri Nov  7 05:30:01 UTC 2025
+============================================================
+
+###########################################################
+# PRUEBAS CON ARCHIVO: numeros_10M_MaxInt.txt
+###########################################################
+
+--- Prueba Secuencial (numeros_10M_MaxInt.txt) ---
+Arreglo original (N=10000000) leído desde /home/cp200807/numeros_10M_MaxInt.txt.
+
+--- Resultados Secuenciales ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 244934
+Tiempo de ejecución total: 341.747557 segundos
+
+--- Pruebas Paralelas (numeros_10M_MaxInt.txt) ---
+
+Ejecutando con 2 procesos...
+Arreglo original (N=10000000) leído desde /home/cp200807/numeros_10M_MaxInt.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 244934
+Tiempo de ejecución total (Proceso 0): 189.135382 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 189.135382   | 85.258036    | 96.311987    | 7.565359     |
+| 1        | 189.118335   | 178.890115   | 10.227808    | 0.000412     |
+
+Ejecutando con 4 procesos...
+Arreglo original (N=10000000) leído desde /home/cp200807/numeros_10M_MaxInt.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 244934
+Tiempo de ejecución total (Proceso 0): 114.956721 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 114.956721   | 4.496547     | 102.723917   | 7.736258     |
+| 1        | 114.947378   | 42.070689    | 72.875602    | 0.001088     |
+| 2        | 114.949691   | 82.154979    | 32.794240    | 0.000472     |
+| 3        | 114.948671   | 104.813500   | 10.134644    | 0.000527     |
+
+Ejecutando con 8 procesos...
+Arreglo original (N=10000000) leído desde /home/cp200807/numeros_10M_MaxInt.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 244934
+Tiempo de ejecución total (Proceso 0): 62.009993 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 62.009993    | 2.763153     | 51.622832    | 7.624008     |
+| 1        | 62.005492    | 1.632146     | 60.372652    | 0.000694     |
+| 2        | 62.006424    | 3.335820     | 58.669982    | 0.000621     |
+| 3        | 62.007384    | 47.371447    | 14.635377    | 0.000561     |
+| 4        | 62.004271    | 37.094799    | 24.909062    | 0.000410     |
+| 5        | 62.008167    | 42.777230    | 19.230496    | 0.000441     |
+| 6        | 62.010077    | 47.844085    | 14.165626    | 0.000366     |
+| 7        | 62.007047    | 51.727238    | 10.279389    | 0.000420     |
+
+###########################################################
+# PRUEBAS CON ARCHIVO: numeros_5M_NEW.txt
+###########################################################
+
+--- Prueba Secuencial (numeros_5M_NEW.txt) ---
+Arreglo original (N=5000000) leído desde /home/cp200807/numeros_5M_NEW.txt.
+
+--- Resultados Secuenciales ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 121903
+Tiempo de ejecución total: 170.304398 segundos
+
+--- Pruebas Paralelas (numeros_5M_NEW.txt) ---
+
+Ejecutando con 2 procesos...
+Arreglo original (N=5000000) leído desde /home/cp200807/numeros_5M_NEW.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 121903
+Tiempo de ejecución total (Proceso 0): 166.201922 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 166.201922   | 161.913548   | 0.503698     | 3.784675     |
+| 1        | 166.186955   | 17.580751    | 148.606137   | 0.000067     |
+
+Ejecutando con 4 procesos...
+Arreglo original (N=5000000) leído desde /home/cp200807/numeros_5M_NEW.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 121903
+Tiempo de ejecución total (Proceso 0): 68.721169 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 68.721169    | 46.734330    | 18.232073    | 3.754766     |
+| 1        | 68.715976    | 63.480918    | 5.234470     | 0.000587     |
+| 2        | 68.716957    | 11.826952    | 56.889935    | 0.000070     |
+| 3        | 68.716757    | 12.210721    | 56.505924    | 0.000112     |
+
+Ejecutando con 8 procesos...
+Arreglo original (N=5000000) leído desde /home/cp200807/numeros_5M_NEW.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 121903
+Tiempo de ejecución total (Proceso 0): 64.752087 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 64.752087    | 2.413236     | 58.577473    | 3.761378     |
+| 1        | 64.744643    | 59.261589    | 5.482366     | 0.000687     |
+| 2        | 64.748120    | 19.508801    | 45.239001    | 0.000317     |
+| 3        | 64.747288    | 20.959206    | 43.787792    | 0.000290     |
+| 4        | 64.746086    | 3.730562     | 61.015464    | 0.000060     |
+| 5        | 64.747104    | 3.686701     | 61.060341    | 0.000062     |
+| 6        | 64.751873    | 3.778593     | 60.973225    | 0.000055     |
+| 7        | 64.746969    | 3.971490     | 60.775432    | 0.000047     |
+
+FIN DE PRUEBAS: Fri Nov  7 05:50:12 UTC 2025
+============================================================
+============================================================
+INICIO DE PRUEBAS: Fri Nov  7 06:30:01 UTC 2025
+============================================================
+
+###########################################################
+# PRUEBAS CON ARCHIVO: numeros_10M_MaxInt.txt
+###########################################################
+
+--- Prueba Secuencial (numeros_10M_MaxInt.txt) ---
+Arreglo original (N=10000000) leído desde /home/cp200807/numeros_10M_MaxInt.txt.
+
+--- Resultados Secuenciales ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 244934
+Tiempo de ejecución total: 343.229143 segundos
+
+--- Pruebas Paralelas (numeros_10M_MaxInt.txt) ---
+
+Ejecutando con 2 procesos...
+Arreglo original (N=10000000) leído desde /home/cp200807/numeros_10M_MaxInt.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 244934
+Tiempo de ejecución total (Proceso 0): 189.170348 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 189.170348   | 85.471698    | 96.084252    | 7.614398     |
+| 1        | 189.153301   | 178.888369   | 10.264506    | 0.000426     |
+
+Ejecutando con 4 procesos...
+Arreglo original (N=10000000) leído desde /home/cp200807/numeros_10M_MaxInt.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 244934
+Tiempo de ejecución total (Proceso 0): 114.938267 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 114.938267   | 4.529279     | 102.456614   | 7.952374     |
+| 1        | 114.929175   | 42.080800    | 72.847593    | 0.000783     |
+| 2        | 114.931226   | 82.153950    | 32.776819    | 0.000456     |
+| 3        | 114.930446   | 104.809674   | 10.120370    | 0.000402     |
+
+Ejecutando con 8 procesos...
+Arreglo original (N=10000000) leído desde /home/cp200807/numeros_10M_MaxInt.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 244934
+Tiempo de ejecución total (Proceso 0): 62.115818 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 62.115818    | 2.772419     | 51.595762    | 7.747636     |
+| 1        | 62.108859    | 1.632589     | 60.475567    | 0.000703     |
+| 2        | 62.111969    | 3.337455     | 58.773460    | 0.001054     |
+| 3        | 62.111173    | 47.373190    | 14.737180    | 0.000803     |
+| 4        | 62.110053    | 37.097116    | 25.012529    | 0.000407     |
+| 5        | 62.111252    | 42.776995    | 19.333772    | 0.000485     |
+| 6        | 62.115615    | 47.847398    | 14.267788    | 0.000429     |
+| 7        | 62.110851    | 51.726246    | 10.384188    | 0.000418     |
+
+###########################################################
+# PRUEBAS CON ARCHIVO: numeros_5M_NEW.txt
+###########################################################
+
+--- Prueba Secuencial (numeros_5M_NEW.txt) ---
+Arreglo original (N=5000000) leído desde /home/cp200807/numeros_5M_NEW.txt.
+
+--- Resultados Secuenciales ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 121903
+Tiempo de ejecución total: 171.012929 segundos
+
+--- Pruebas Paralelas (numeros_5M_NEW.txt) ---
+
+Ejecutando con 2 procesos...
+Arreglo original (N=5000000) leído desde /home/cp200807/numeros_5M_NEW.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 121903
+Tiempo de ejecución total (Proceso 0): 167.123647 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 167.123647   | 162.818466   | 0.502002     | 3.803179     |
+| 1        | 167.108600   | 17.568729    | 149.539801   | 0.000070     |
+
+Ejecutando con 4 procesos...
+Arreglo original (N=5000000) leído desde /home/cp200807/numeros_5M_NEW.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 121903
+Tiempo de ejecución total (Proceso 0): 68.784340 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 68.784340    | 46.912864    | 18.089646    | 3.781830     |
+| 1        | 68.779090    | 63.481818    | 5.296798     | 0.000474     |
+| 2        | 68.780113    | 11.826169    | 56.953865    | 0.000079     |
+| 3        | 68.779876    | 12.211497    | 56.568266    | 0.000112     |
+
+Ejecutando con 8 procesos...
+Arreglo original (N=5000000) leído desde /home/cp200807/numeros_5M_NEW.txt.
+
+--- Resultados ---
+Arreglo ordenado correctamente.
+Total de números primos encontrados: 121903
+Tiempo de ejecución total (Proceso 0): 65.561972 segundos
+
+--- Análisis de Tiempos por Proceso (segundos) ---
+| Proceso  | Total        | Cómputo     | Comunicación | Ocio/Espera  |
+|----------|--------------|--------------|--------------|--------------|
+| 0        | 65.561972    | 2.534957     | 58.611797    | 4.415218     |
+| 1        | 65.558122    | 59.260791    | 6.296637     | 0.000694     |
+| 2        | 65.559568    | 19.510695    | 46.048570    | 0.000304     |
+| 3        | 65.558878    | 20.959654    | 44.598837    | 0.000387     |
+| 4        | 65.555990    | 3.730037     | 61.825890    | 0.000063     |
+| 5        | 65.560743    | 3.685218     | 61.875471    | 0.000054     |
+| 6        | 65.563371    | 3.778728     | 61.784589    | 0.000054     |
+| 7        | 65.558657    | 3.972064     | 61.586551    | 0.000042     |
+
+FIN DE PRUEBAS: Fri Nov  7 06:50:17 UTC 2025
+============================================================
